@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Configurações do Sistema</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --neon-green:#00ff88;
+      --neon-cyan:#00e0ff;
+      --bg-gradient:radial-gradient(circle at top, #0f2027, #08141c 80%);
+      --text-light:#ccffe6;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:'Poppins',sans-serif;
+      background:var(--bg-gradient);
+      color:var(--text-light);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:48px 20px;
+      position:relative;
+      overflow-x:hidden;
+    }
+
+    /* brilho suave */
+    body::before{
+      content:'';
+      position:fixed;
+      top:-120px;
+      left:-120px;
+      width:560px;height:560px;
+      background:radial-gradient(circle, rgba(0,255,136,0.18), transparent 70%);
+      filter:blur(120px);
+      z-index:0;
+    }
+
+    header{z-index:1;text-align:center;margin-bottom:18px}
+    h1{
+      margin:0;
+      color:var(--neon-green);
+      text-shadow:0 0 15px var(--neon-green);
+      font-size:1.6rem;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+    }
+    .subtitle{
+      color:var(--neon-cyan);
+      margin-top:8px;
+      font-size:0.95rem;
+      text-shadow:0 0 8px rgba(0,224,255,0.08);
+    }
+
+    main{
+      width:100%;
+      max-width:1100px;
+      z-index:1;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:28px;
+      align-items:start;
+    }
+
+    /* painel principal */
+    .panel{
+      background:var(--glass);
+      border:1px solid rgba(0,255,136,0.18);
+      border-radius:14px;
+      padding:22px;
+      box-shadow:0 0 18px rgba(0,255,136,0.06);
+      backdrop-filter:blur(6px);
+    }
+
+    .panel h2{
+      margin:0 0 12px 0;
+      color:var(--neon-green);
+      text-shadow:0 0 8px var(--neon-green);
+      font-size:1.05rem;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .grid-2 {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+
+    label{
+      display:block;
+      font-weight:600;
+      color:var(--neon-cyan);
+      font-size:0.9rem;
+      margin-bottom:6px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], select, textarea {
+      width:100%;
+      padding:10px 12px;
+      border-radius:10px;
+      background:transparent;
+      border:1px solid rgba(0,255,136,0.18);
+      color:var(--text-light);
+      outline:none;
+      transition:all .18s;
+      font-size:0.95rem;
+    }
+    input:focus, select:focus, textarea:focus { box-shadow:0 0 12px rgba(0,255,136,0.06); border-color:var(--neon-green); }
+
+    .row { margin-bottom:14px; }
+
+    /* switch */
+    .switch {
+      --w:46px; --h:26px;
+      width:var(--w);
+      height:var(--h);
+      background:rgba(255,255,255,0.04);
+      border-radius:999px;
+      border:1px solid rgba(0,255,136,0.12);
+      position:relative;
+      display:inline-block;
+      vertical-align:middle;
+      cursor:pointer;
+      transition:all .2s;
+    }
+    .switch .knob{
+      position:absolute;
+      top:2px; left:2px;
+      width:20px; height:20px;
+      border-radius:50%;
+      background:var(--neon-green);
+      box-shadow:0 0 8px rgba(0,255,136,0.15);
+      transition:all .18s;
+    }
+    .switch.on{ background:linear-gradient(90deg, rgba(0,255,136,0.12), rgba(0,224,255,0.06)); border-color:var(--neon-green); }
+    .switch.on .knob{ left:calc(var(--w) - 22px); background:var(--neon-green); }
+
+    .help { font-size:0.85rem;color:rgba(204,255,230,0.8); margin-top:6px; }
+
+    /* sidebar */
+    .sidebar{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      position:sticky;
+      top:20px;
+      height:max-content;
+    }
+    .quick {
+      background:var(--glass);
+      border-radius:12px;
+      padding:14px;
+      border:1px solid rgba(0,224,255,0.06);
+      box-shadow:0 0 12px rgba(0,224,255,0.04);
+    }
+    .quick p{margin:0;color:var(--neon-cyan);font-size:0.95rem}
+    .save-row { display:flex; gap:12px; margin-top:14px; align-items:center; flex-wrap:wrap }
+
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1px solid var(--neon-green);
+      background:transparent;color:var(--neon-green);font-weight:700;text-decoration:none;cursor:pointer;transition:all .18s;
+      box-shadow:0 0 8px rgba(0,255,136,0.12);
+    }
+    .btn:hover{ transform:translateY(-3px); box-shadow:0 0 24px rgba(0,255,136,0.18); background:var(--neon-green); color:#000 }
+    .btn.secondary{ border-color:var(--neon-cyan); color:var(--neon-cyan); box-shadow:0 0 6px rgba(0,224,255,0.06) }
+    .btn.secondary:hover{ background:var(--neon-cyan); color:#000 }
+
+    /* advanced area */
+    .section{
+      margin-top:10px;padding-top:12px;border-top:1px dashed rgba(0,255,136,0.06)
+    }
+    .muted { color:rgba(204,255,230,0.75); font-size:0.9rem }
+
+    /* toast */
+    .toast{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      background:var(--neon-green);
+      color:#000;
+      padding:10px 14px;
+      border-radius:8px;
+      box-shadow:0 0 24px rgba(0,255,136,0.18);
+      transform:translateY(20px);
+      opacity:0;pointer-events:none;transition:all .3s;
+      z-index:9999;
+    }
+    .toast.show{ transform:translateY(0); opacity:1; pointer-events:auto }
+
+    footer{ margin-top:26px; color:var(--neon-cyan); font-size:0.9rem; text-align:center; z-index:1 }
+    a.link{ color:var(--neon-cyan); text-decoration:none }
+
+    @media (max-width:980px){
+      main{ grid-template-columns: 1fr; padding-bottom:40px }
+      .sidebar{ position:relative; top:auto }
+    }
+    @media (max-width:520px){
+      h1{ font-size:1.25rem }
+      body{ padding:24px 12px }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="bx bx-cog"></i> Configurações do Sistema</h1>
+    <div class="subtitle">Ajuste preferências do portal, aparência, notificações e conta</div>
+  </header>
+
+  <main>
+    <form id="settingsForm" class="panel" method="post" action="/Projeto-Final/public/configuracoes-save.php" novalidate>
+      <h2><i class="bx bx-wrench"></i> Geral</h2>
+
+      <div class="row">
+        <label for="site_title">Título do site</label>
+        <input id="site_title" name="site_title" type="text" value="Portal de Cursos" required />
+      </div>
+
+      <div class="grid-2">
+        <div class="row">
+          <label for="language">Idioma</label>
+          <select id="language" name="language" aria-label="Idioma do sistema">
+            <option value="pt-BR" selected>Português (Brasil)</option>
+            <option value="en-US">English (US)</option>
+            <option value="es-ES">Español</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="theme">Tema</label>
+          <select id="theme" name="theme" aria-label="Tema do site">
+            <option value="neon" selected>Neon Verde (Padrão)</option>
+            <option value="dark">Escuro</option>
+            <option value="light">Claro</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row section">
+        <h2 style="font-size:1rem;margin-bottom:10px;"><i class="bx bx-bell"></i> Notificações</h2>
+        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+          <div>
+            <label class="muted">Notificações por e-mail</label>
+            <div tabindex="0" role="switch" aria-checked="true" id="notifEmail" class="switch on" data-input="notif_email"><span class="knob"></span></div>
+            <div class="help">Ative para receber comunicados e novidades por email.</div>
+          </div>
+
+          <div>
+            <label class="muted">Notificações push</label>
+            <div tabindex="0" role="switch" aria-checked="false" id="notifPush" class="switch" data-input="notif_push"><span class="knob"></span></div>
+            <div class="help">Recomendado: mantenha desativado se preferir menos interrupções.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row section">
+        <h2 style="font-size:1rem;margin-bottom:10px;"><i class="bx bx-lock"></i> Conta & Segurança</h2>
+
+        <div class="grid-2">
+          <div>
+            <label for="admin_email">Email do administrador</label>
+            <input id="admin_email" name="admin_email" type="email" value="admin@exemplo.com" />
+          </div>
+
+          <div>
+            <label for="change_password">Alterar senha</label>
+            <input id="change_password" name="change_password" type="password" placeholder="Nova senha (mín. 8 caracteres)" autocomplete="new-password" />
+          </div>
+        </div>
+
+        <div class="help" style="margin-top:8px;">Se não quiser alterar a senha, deixe o campo em branco.</div>
+      </div>
+
+      <div class="row save-row">
+        <button class="btn" type="submit" id="btnSave"><i class="bx bx-save"></i> Salvar Alterações</button>
+        <button type="button" id="btnReset" class="btn secondary"><i class="bx bx-reset"></i> Restaurar Padrões</button>
+        <div style="flex:1"></div>
+        <small class="muted" aria-hidden="true">Última atualização: <strong>18/10/2025</strong></small>
+      </div>
+    </form>
+
+    <aside class="sidebar">
+      <div class="quick panel">
+        <p style="margin-bottom:8px"><strong>Atalhos rápidos</strong></p>
+        <p><i class="bx bx-link-external"></i> <a class="link" href="/Projeto-Final/public/menu">Voltar ao painel</a></p>
+        <p><i class="bx bx-support"></i> <a class="link" href="/Projeto-Final/public/suporte">Abrir suporte</a></p>
+        <p style="margin-top:8px" class="muted">Use as preferências à esquerda para ajustar visual e notificações.</p>
+      </div>
+
+      <div class="quick panel" aria-live="polite">
+        <p style="margin:0 0 8px 0"><strong>Sobre o tema</strong></p>
+        <p class="muted">Tema <strong>Neon Verde</strong> — óptimo contraste para painéis e dashboards.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© 2025 Portal de Cursos — <a class="link" href="/Projeto-Final/public/politica">Política de Privacidade</a></p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Configurações salvas</div>
+
+  <script>
+    (() => {
+      const form = document.getElementById('settingsForm');
+      const toast = document.getElementById('toast');
+      const btnReset = document.getElementById('btnReset');
+
+      // Switch behaviour (click & keyboard)
+      document.querySelectorAll('.switch').forEach(sw => {
+        sw.addEventListener('click', () => toggleSwitch(sw));
+        sw.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSwitch(sw); }});
+      });
+
+      function toggleSwitch(sw){
+        sw.classList.toggle('on');
+        const checked = sw.classList.contains('on');
+        sw.setAttribute('aria-checked', checked ? 'true' : 'false');
+        // atualizar um input hidden se necessário:
+        // document.querySelector(`[name="${sw.dataset.input}"]`).value = checked ? '1' : '0';
+      }
+
+      // submit: simula salvar e mostra toast; se preferir, remova preventDefault para enviar ao servidor
+      form.addEventListener('submit', (e) => {
+        // validação simples de senha
+        const pwd = document.getElementById('change_password').value.trim();
+        if(pwd && pwd.length < 8){
+          e.preventDefault();
+          alert('A senha deve ter no mínimo 8 caracteres.');
+          document.getElementById('change_password').focus();
+          return;
+        }
+
+        // Mostrar toast e (aqui) permitir envio real ao servidor:
+        // se quiser testar sem enviar, comente a linha abaixo (e.preventDefault())
+        e.preventDefault();
+
+        showToast('Salvando configurações...');
+        // simulação de "salvo"
+        setTimeout(() => {
+          showToast('Configurações salvas com sucesso ✓');
+          // se quiser realmente enviar, remova preventDefault ou use fetch/ajax para enviar os dados
+        }, 900);
+      });
+
+      function showToast(msg){
+        toast.textContent = msg;
+        toast.classList.add('show');
+        clearTimeout(window._toastTimeout);
+        window._toastTimeout = setTimeout(() => toast.classList.remove('show'), 2800);
+      }
+
+      // restaurar padrões (simples)
+      btnReset.addEventListener('click', () => {
+        if(!confirm('Restaurar padrões de configuração?')) return;
+        // exemplo: restaurar valores default aqui
+        document.getElementById('site_title').value = 'Portal de Cursos';
+        document.getElementById('language').value = 'pt-BR';
+        document.getElementById('theme').value = 'neon';
+        document.getElementById('admin_email').value = 'admin@exemplo.com';
+        document.getElementById('change_password').value = '';
+        // switches: notificacoes por email: on; push: off
+        const notifEmail = document.getElementById('notifEmail');
+        const notifPush = document.getElementById('notifPush');
+        if(!notifEmail.classList.contains('on')) toggleSwitch(notifEmail);
+        if(notifPush.classList.contains('on')) toggleSwitch(notifPush);
+        showToast('Padrões restaurados');
+      });
+    })();
+  </script>
+</body>
+</html>

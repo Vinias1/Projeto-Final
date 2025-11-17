@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+
+  <div class="login-container">
+    
+    <div class="login-card">
+      <h2><i class="bx bx-log-in"></i> Bem-vindo(a)</h2>
+      <p>Faça login para acessar o sistema</p>
+
+      <form method="POST" action="/auth">
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+        </div>
+
+        <div class="input-group">
+          <label for="senha">Senha</label>
+          <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+        </div>
+
+        <button type="submit" class="btn-login">Entrar</button>
+      </form>
+
+      <div class="link-register">
+        <p>Não tem uma conta?
+          <a href="/usuario/novo">Cadastre-se</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

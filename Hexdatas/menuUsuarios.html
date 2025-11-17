@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuários Cadastrados</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --neon-green: #00ff88;
+      --neon-cyan: #00e0ff;
+      --text-light: #d6fff1;
+      --bg-dark: #0d1117;
+      --bg-gradient: radial-gradient(circle at top, #0f2027, #08141c 80%);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      padding-top: 80px;
+      position: relative;
+    }
+
+    /* brilho de fundo */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -80px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 255, 136, 0.2), transparent 70%);
+      filter: blur(100px);
+      z-index: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--neon-green);
+      text-shadow: 0 0 15px var(--neon-green);
+      margin-bottom: 40px;
+      z-index: 1;
+    }
+
+    table {
+      width: 90%;
+      max-width: 900px;
+      border-collapse: collapse;
+      border: 1px solid rgba(0, 255, 136, 0.4);
+      box-shadow: 0 0 25px rgba(0, 255, 136, 0.15);
+      border-radius: 14px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+      z-index: 1;
+    }
+
+    thead {
+      background: rgba(0, 255, 136, 0.15);
+      color: var(--neon-green);
+      font-weight: 600;
+    }
+
+    th, td {
+      padding: 15px 18px;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+    }
+
+    tbody tr {
+      transition: all 0.3s ease;
+    }
+
+    tbody tr:hover {
+      background: rgba(0, 255, 136, 0.08);
+      transform: scale(1.01);
+    }
+
+    .acoes {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--neon-green);
+      color: var(--neon-green);
+      background: transparent;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+    }
+
+    .btn:hover {
+      background: var(--neon-green);
+      color: #000;
+      box-shadow: 0 0 25px var(--neon-green);
+      transform: translateY(-2px);
+    }
+
+    .btn i {
+      font-size: 1rem;
+    }
+
+    .voltar {
+      margin-top: 40px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .voltar a {
+      color: var(--neon-cyan);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .voltar a:hover {
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green);
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--neon-green);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 700px) {
+      table {
+        font-size: 0.9rem;
+      }
+      th, td {
+        padding: 10px;
+      }
+      .acoes {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1><i class='bx bx-group'></i> Usuários Cadastrados</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Data de Cadastro</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ana Silva</td>
+        <td>ana@exemplo.com</td>
+        <td>01/10/2025</td>
+        <td class="acoes">
+          <a href="#" class="btn"><i class='bx bx-edit-alt'></i> Editar</a>
+          <a href="#" class="btn"><i class='bx bx-trash'></i> Excluir</a>
+        </td>
+      </tr>
+      <tr>
+        <td>João Pereira</td>
+        <td>joao@exemplo.com</td>
+        <td>03/10/2025</td>
+        <td class="acoes">
+          <a href="#" class="btn"><i class='bx bx-edit-alt'></i> Editar</a>
+          <a href="#" class="btn"><i class='bx bx-trash'></i> Excluir</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Lucas Almeida</td>
+        <td>lucas@exemplo.com</td>
+        <td>05/10/2025</td>
+        <td class="acoes">
+          <a href="#" class="btn"><i class='bx bx-edit-alt'></i> Editar</a>
+          <a href="#" class="btn"><i class='bx bx-trash'></i> Excluir</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Mariana Costa</td>
+        <td>mariana@exemplo.com</td>
+        <td>06/10/2025</td>
+        <td class="acoes">
+          <a href="#" class="btn"><i class='bx bx-edit-alt'></i> Editar</a>
+          <a href="#" class="btn"><i class='bx bx-trash'></i> Excluir</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="voltar">
+    <a href="menu.html"><i class='bx bx-arrow-back'></i> Voltar ao menu</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Portal de Cursos - Desenvolvido em PHP MVC</p>
+  </footer>
+</body>
+</html>

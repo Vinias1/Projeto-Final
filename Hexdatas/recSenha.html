@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperação de senha</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="recSenha.css">
+</head>
+<body>
+  <main class="container">
+    <form action="esqueci2" method="POST">
+      <h1><i class="bx bx-lock-open"></i> Recuperação de senha</h1>
+
+      <div class="input-box">
+        <input name="email" type="email" placeholder="exemplo@exemplo.com" required>
+        <i class="bx bxs-user"></i>
+      </div>
+
+      <div class="input-box">
+        <input id="telefone-br" name="telefone" type="tel" placeholder="Nº Celular"
+               pattern="\d{11,13}" title="Informe apenas números" required>
+        <i class="bx bxs-mobile"></i>
+      </div>
+
+      <button type="submit" class="login">Recuperar</button>
+
+      <div class="link-register">
+        <p>Não tem uma conta? <a href="usuario/novo">Cadastre-se</a></p>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
