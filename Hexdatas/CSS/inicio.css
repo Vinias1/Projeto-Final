@@ -496,3 +496,161 @@
         margin-top: 30px;
     }
 }
+
+/* Variáveis de Cores para as áreas (baseadas na imagem) */
+:root {
+    --data-bg: #d4e9d4; /* Verde Claro */
+    --personal-bg: #f9e6d0; /* Pêssego Claro */
+    --education-bg: #fbeedb; /* Amarelo/Creme Claro */
+    --ai-bg: #d5e6f6; /* Azul Claro */
+    --business-bg: #d7f5f2; /* Ciano Claro */
+    --productivity-bg: #f0e6f6; /* Lilás Claro */
+    --programming-bg: #f7e0d8; /* Salmão Claro */
+    --it-bg: #fbe6d5; /* Laranja Claro */
+    --border-color: #e0e0e0;
+    --text-color: #333;
+}
+
+/* Container Principal */
+.interest-areas-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00e0ff);
+    margin-bottom: 40px;
+}
+
+/* Container dos Cartões (Grid ou Flexbox para layout responsivo) */
+.areas-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 20px;
+    overflow-x: scroll;
+    padding-bottom: 20px;
+}
+
+/* Estilo do Cartão Individual */
+.area-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    width: 150px; /* Largura fixa para os cartões */
+    height: 150px; /* Altura fixa para os cartões */
+    
+    padding: 15px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.area-card:hover {
+    border-color: var(--neon-green);
+      box-shadow: 0 0 30px var(--neon-green);
+      transform: translateY(-6px);
+      background: rgba(0,255,136,0.06);
+    
+}
+
+/* Estilo do Icone Wrapper (Círculo de Fundo) */
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-bottom: 15px;
+    margin-top: 5px;
+    
+    /* Estilo do ícone */
+    font-size: 24px;
+    color: var(--text-color); /* Cor do ícone */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borda sutil */
+}
+
+/* Cores de Fundo (Simulando as áreas coloridas) */
+.data-color { background-color: var(--data-bg); }
+.personal-color { background-color: var(--personal-bg); }
+.education-color { background-color: var(--education-bg); }
+.ai-color { background-color: var(--ai-bg); }
+.business-color { background-color: var(--business-bg); }
+.productivity-color { background-color: var(--productivity-bg); }
+.programming-color { background-color: var(--programming-bg); }
+.it-color { background-color: var(--it-bg); }
+
+/* Nome da Área */
+.area-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* Estilo para o Bloco Destacado/Selecionado */
+.area-card.highlighted {
+    /* Simula o box-shadow e a cor de destaque da borda na imagem */
+    box-shadow: 0 0 0 4px var(--highlight-border), 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--highlight-border); /* Borda mais forte */
+}
+
+/* Responsividade Básica: Ajusta a largura do cartão em telas menores */
+@media (max-width: 650px) {
+    .area-card {
+        width: 120px;
+        height: 120px;
+        padding: 10px;
+        border-radius: 15px;
+    }
+    .icon-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+    .area-name {
+        font-size: 0.75rem;
+    }
+}
+.area-container {
+    display: flex;
+    flex-wrap: nowrap; /* MANTENHA ESTE: Impede que os cartões quebrem a linha */
+    justify-content: flex-start;
+    gap: 20px;
+    overflow-x: scroll; /* MANTENHA ESTE: Habilita a rolagem lateral */
+    padding-bottom: 20px;
+}
+
+.area-card {
+    /* MANTENHA TUDO ISTO: */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 150px; /* LARGURA FIXA PARA O FLEXBOX */
+    height: 150px; /* ALTURA FIXA */
+    padding: 15px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    
+    /* ADICIONE ESTES DOIS PARA LINKS/CARROSSEL: */
+    text-decoration: none; /* Remove o sublinhado do link */
+    flex-shrink: 0;      /* Impede que os cartões encolham no Flexbox */
+}
