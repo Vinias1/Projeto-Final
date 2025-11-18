@@ -13,7 +13,9 @@
   <p>Crie sua conta para acessar o portal</p>
 
   <div class="form-container">
-    <form method="POST" action="/usuario/salvar">
+
+    <!-- ALTERADO: agora ativa a função cadastrar() -->
+    <form onsubmit="cadastrar(event)">
       <div class="input-group">
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" required>
@@ -36,6 +38,18 @@
   <div class="link-login">
     <p>Já tem uma conta? <a href="/HTML/login.html">Voltar ao login</a></p>
   </div>
+
+  <!-- SCRIPT DE CADASTRO -->
+  <script>
+    function cadastrar(e) {
+      e.preventDefault(); // impede envio real
+      
+      alert("Cadastro realizado!");
+
+      // redireciona para o menu
+      window.location.href = "../HTML/inicio.html";
+    }
+  </script>
 
 </body>
 </html>

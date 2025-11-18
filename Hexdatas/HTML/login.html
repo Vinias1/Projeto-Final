@@ -15,7 +15,8 @@
       <h2><i class="bx bx-log-in"></i> Bem-vindo(a)</h2>
       <p>Faça login para acessar o sistema</p>
 
-      <form method="get" action="/auth">
+      <!-- ALTERADO: agora apenas redireciona -->
+      <form onsubmit="redirect(event)">
         <div class="input-group">
           <label for="email">E-mail</label>
           <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
@@ -36,6 +37,14 @@
       </div>
     </div>
   </div>
+
+  <!-- SCRIPT DE REDIRECIONAMENTO -->
+  <script>
+    function redirect(e) {
+      e.preventDefault();
+      window.location.href = "../HTML/inicio.html";
+    }
+  </script>
 
 </body>
 </html>
