@@ -406,7 +406,7 @@
 .dropdown-container {
   position: relative;
   display: inline-block;
-  height: 100%;
+  
   display: flex;
   align-items: center;
 }
@@ -447,7 +447,7 @@
 
 /* Mostra o menu ao passar o mouse */
 .dropdown-container:hover .dropdown-menu {
-  display: block;
+  display: block !important;
 }
 
 /* Estilo dos links dentro do menu */
