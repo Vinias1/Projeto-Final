@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nós | Hexdatas</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../CSS/inicio.css">
+    
+    <style>
+        /* Ajuste específico para o texto da página sobre */
+        .about-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+        }
+        
+        .about-intro h2 {
+            color: var(--neon-green);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .about-intro p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .destaque-texto {
+            color: var(--neon-cyan);
+            font-weight: bold;
+        }
+
+        /* Reutilizando o grid mas centralizando para a seção de equipe/valores */
+        .grid-valores {
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <i class='bx bx-code-alt'></i> Hexdatas
+        </div>
+
+        <nav class="main-nav">
+            <a href="inicio.html" class="nav-link"><i class='bx bx-home'></i> Início</a>
+            <a href="cursos.html" class="nav-link"><i class='bx bx-book'></i> Cursos</a>
+            <a href="#" class="nav-link"><i class='bx bx-support'></i> Suporte</a>
+            <a href="sobreNos.html" class="nav-link active"><i class='bx bx-group'></i> Sobre nós</a> 
+            <a href="login.html" class="btn-login">Entrar</a>
+        </nav>
+    </header>
+
+    <section class="about-intro">
+        <h2>O Futuro da Educação Tech</h2>
+        <p>
+            A <span class="destaque-texto">Hexdatas</span> nasceu da necessidade de democratizar o acesso ao conhecimento de alto nível. 
+            Não somos apenas uma plataforma de cursos; somos uma comunidade open-source dedicada a formar a próxima geração 
+            de desenvolvedores, hackers éticos e arquitetos de software.
+        </p>
+        <br>
+        <p>
+            Acreditamos que a tecnologia deve ser acessível, prática e, acima de tudo, livre. Nossa curadoria humana garante 
+            que você não perca tempo com conteúdos defasados.
+        </p>
+    </section>
+
+    <section class="cursos-container grid-valores">
+        
+        <article class="curso-card">
+            <div class="curso-header">
+                <i class='bx bx-target-lock'></i>
+                <h3>Nossa Missão</h3>
+            </div>
+            <div class="curso-info">
+                <span><i class='bx bx-rocket'></i> Aceleração</span>
+            </div>
+            <p>
+                Quebrar as barreiras financeiras e geográficas da educação em tecnologia, fornecendo conteúdo de ponta 
+                totalmente gratuito e atualizado para o mercado brasileiro.
+            </p>
+        </article>
+
+        <article class="curso-card">
+            <div class="curso-header">
+                <i class='bx bx-world'></i>
+                <h3>Nossa Visão</h3>
+            </div>
+            <div class="curso-info">
+                <span><i class='bx bx-network-chart'></i> Comunidade</span>
+            </div>
+            <p>
+                Ser a maior referência de ensino open-source da América Latina, criando um ecossistema onde alunos 
+                se tornam mentores e projetos reais saem do papel.
+            </p>
+        </article>
+
+        <article class="curso-card">
+            <div class="curso-header">
+                <i class='bx bx-shield-quarter'></i>
+                <h3>Nossos Valores</h3>
+            </div>
+            <div class="curso-info">
+                <span><i class='bx bx-check-shield'></i> Ética Hacker</span>
+            </div>
+            <p>
+                Transparência radical, compartilhamento de conhecimento, respeito à privacidade e uso da tecnologia 
+                para o bem comum e inovação social.
+            </p>
+        </article>
+
+    </section>
+
+    <section class="lancamentos" style="text-align: center; margin-bottom: 40px;">
+        <h2>Faça parte da revolução</h2>
+        <p style="margin-bottom: 20px; color: var(--text-light);">Junte-se a milhares de estudantes que estão mudando suas carreiras hoje.</p>
+        <a href="cadastro.html" class="btn-cadastro">
+            Criar Conta Gratuita →
+        </a>
+    </section>
+
+    <div class="voltar">
+        <a href="inicio.html"><i class='bx bx-arrow-back'></i> Voltar ao início</a>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class='bx bx-code-alt'></i> Hexdatas
+            </div>
+            <p>© 2025 Portal de Cursos. Desenvolvido com <i class='bx bxs-heart' style="color: var(--neon-green)"></i> e
+                HTML.CSS</p>
+            <div class="social-links">
+                <a href="https://github.com/Vinias1/Projeto-Final"><i class='bx bxl-github'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

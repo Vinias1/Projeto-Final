@@ -449,7 +449,7 @@
 /* 3. Estilização do Botão CTA */
 .btn-cadastro {
     display: inline-block;
-    background-color: );
+    background-color: var(--neon-green);
     color: #ccffe6;
     text-decoration: none;
     padding: 15px 30px;
