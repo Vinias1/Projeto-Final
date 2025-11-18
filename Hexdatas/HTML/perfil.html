@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Perfil — Hexdatas</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/perfil.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo-container">
+      <i class='bx bx-code-alt'></i> Hexdatas
+    </div>
+
+    <nav class="main-nav">
+      <a href="inicio.html" class="nav-link"><i class='bx bx-home'></i> Início</a>
+      <a href="cursos.html" class="nav-link"><i class='bx bx-book'></i> Cursos</a>
+      <a href="sobreNos.html" class="nav-link"><i class='bx bx-info-circle'></i> Sobre nós</a>
+      <a href="menu.html" class="nav-link"><i class='bx bx-grid-alt'></i> Menu</a>
+
+      <!-- botão perfil (na sua pagina de inicio substituir Entrar por este link) -->
+      <a href="perfil.html" class="btn-login"><i class='bx bx-user-circle'></i> Perfil</a>
+    </nav>
+  </header>
+
+  <main class="profile-wrap">
+    <section class="profile-card">
+      <div class="profile-left">
+        <div class="avatar">
+          <!-- coloque aqui a imagem real se existir -->
+          <img src="../assets/student.jpg" alt="Avatar do usuário">
+        </div>
+
+        <div class="user-basic">
+          <h1 id="user-name">Vinícius Silva</h1>
+          <p class="user-role">Estudante • Disponível</p>
+
+          <div class="contact">
+            <p><i class="bx bx-envelope"></i> <span id="user-email">vinicius@example.com</span></p>
+            <p><i class="bx bx-phone"></i> <span id="user-phone">+55 (00) 9 0000-0000</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-right">
+        <div class="profile-actions">
+          <button class="btn btn-primary" onclick="editarPerfil()"><i class="bx bx-edit"></i> Editar perfil</button>
+          <button class="btn" onclick="alterarSenha()"><i class="bx bx-lock"></i> Alterar senha</button>
+          <button class="btn" onclick="meusCursos()"><i class="bx bx-book-open"></i> Meus cursos</button>
+          <button class="btn" onclick="acessarMenu()"><i class="bx bx-grid-alt"></i> Ir para menu</button>
+        </div>
+
+        <div class="profile-bio">
+          <h3>Sobre</h3>
+          <p id="user-bio">Apaixonado por tecnologia e aprendizado contínuo. Aqui você pode gerenciar suas preferências, ver cursos e editar seus dados.</p>
+        </div>
+
+        <div class="danger-row">
+          <button class="btn btn-logout" onclick="logoutConfirm()"><i class="bx bx-log-out"></i> Sair</button>
+          <a class="btn btn-back" href="inicio.html"><i class="bx bx-arrow-back"></i> Voltar ao início</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-cards">
+      <a href="cursos.html" class="qc-card">
+        <div class="qc-icon"><i class='bx bx-book'></i></div>
+        <div class="qc-text">
+          <strong>Explorar Cursos</strong>
+          <span>Veja novidades & lançamentos</span>
+        </div>
+      </a>
+
+      <a href="menu.html" class="qc-card">
+        <div class="qc-icon"><i class='bx bx-grid-alt'></i></div>
+        <div class="qc-text">
+          <strong>Meu Painel</strong>
+          <span>Acesse suas configurações</span>
+        </div>
+      </a>
+
+      <a href="recSenha.html" class="qc-card">
+        <div class="qc-icon"><i class='bx bx-help-circle'></i></div>
+        <div class="qc-text">
+          <strong>Suporte</strong>
+          <span>Ajuda & contato</span>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-logo"><i class='bx bx-code-alt'></i> Hexdatas</div>
+      <p>© 2025 Portal de Cursos. Desenvolvido com <i class='bx bxs-heart' style="color: var(--neon-green)"></i></p>
+    </div>
+  </footer>
+
+  <script>
+    // ações sem backend (substitua por rotas reais se necessário)
+    function editarPerfil() {
+      alert('Abrir edição de perfil (simulado).');
+      // exemplo: window.location.href = 'perfil-editar.html';
+    }
+    function alterarSenha() {
+      alert('Abrir alteração de senha (simulado).');
+    }
+    function meusCursos() {
+      window.location.href = 'cursos.html';
+    }
+    function acessarMenu() {
+      window.location.href = 'menu.html';
+    }
+    function logoutConfirm() {
+      if (confirm('Deseja realmente sair?')) {
+        // ação sem backend: redirecionar ao login
+        window.location.href = 'login.html';
+      }
+    }
+
+    // exemplo: carregar dados dinamicamente (se quiser simular)
+    // document.getElementById('user-name').textContent = localStorage.getItem('nome') || 'Usuário';
+  </script>
+</body>
+</html>
