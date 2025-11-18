@@ -82,6 +82,44 @@
       min-height: 200px;
     }
 
+    /* estado inscrito */
+.curso-actions .inscr-btn.inscrito {
+  background-color: #2ecc71;
+  color: #061213;
+  border-color: rgba(0,0,0,0.08);
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(46,204,113,0.12);
+  transition: transform .15s ease;
+}
+
+/* estilo geral do botão convertido (mantém aparência) */
+.curso-actions .inscr-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* aparência quando desabilitado (acessibilidade) */
+.curso-actions .inscr-btn[disabled] {
+  opacity: 0.95;
+  cursor: default;
+}
+
+/* foco visível para acessibilidade */
+.curso-actions .inscr-btn:focus {
+  outline: 3px solid rgba(0,255,136,0.18);
+  outline-offset: 3px;
+}
+
+
+
     .curso-card::before {
       content: '';
       position: absolute;

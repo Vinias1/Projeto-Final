@@ -9,6 +9,107 @@
   <link rel="stylesheet" type="text/css" href="../CSS/cursos.css">
 </head>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // seletor dos links de inscrição
+  const selector = '.curso-actions a[title="Inscrever-se"]';
+  const links = Array.from(document.querySelectorAll(selector));
+  if (!links.length) return;
+
+  // carregar inscritos do localStorage (objeto: { id: true, ... })
+  const STORAGE_KEY = 'hexdatas_enrolled_v1';
+  let enrolled = {};
+  try {
+    enrolled = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  } catch (e) { enrolled = {}; }
+
+  // função utilitária para extrair id do href (busca "id=..." na query)
+  function getCourseIdFromHref(href) {
+    try {
+      // cria URL absoluta usando a localização atual como base
+      const url = new URL(href, window.location.origin);
+      const id = url.searchParams.get('id');
+      if (id) return id;
+      // fallback: tenta pegar final do path
+      const pathParts = url.pathname.split('/');
+      return pathParts.filter(Boolean).pop() || href;
+    } catch (e) {
+      return href; // fallback bruto
+    }
+  }
+
+  // converte cada <a> em <button> (mantendo aparência)
+  links.forEach((link, index) => {
+    const courseId = getCourseIdFromHref(link.getAttribute('href') || `curso-btn-${index}`);
+
+    // criar botão
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    // mantém classes originais para herdar estilo (adiciona 'inscr-btn' para controle)
+    btn.className = (link.className ? link.className + ' ' : '') + ' inscr-btn';
+    btn.title = link.title || 'Inscrever-se';
+    btn.setAttribute('data-course-id', courseId);
+
+    // preserva o conteúdo (ícone + texto) - clona HTML
+    btn.innerHTML = link.innerHTML;
+
+    // substitui o <a> pelo <button> no DOM
+    link.replaceWith(btn);
+
+    // se já inscrito no storage, atualiza visual
+    if (enrolled[courseId]) {
+      markAsEnrolled(btn);
+    }
+
+    // adicionar listener de clique
+    btn.addEventListener('click', () => {
+      // marca como inscrito visualmente e no storage
+      enrolled[courseId] = true;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(enrolled)); } catch (e) {}
+      markAsEnrolled(btn);
+
+      // você pode abrir uma modal ou redirecionar para a página do curso se quiser
+      // ex: window.location.href = '/HTML/curso-detalhes.html?id=' + courseId;
+    });
+  });
+
+  // função que aplica estilos/classes/propriedades ao botão inscrito
+  function markAsEnrolled(button) {
+    button.classList.add('inscrito');
+    // troca o texto (preservando ícone se houver)
+    // tenta manter ícone (elemento <i>) se existir, trocando só o texto
+    const icon = button.querySelector('i');
+    const checkText = '✔ Inscrito';
+    if (icon) {
+      // remove nós de texto extras e coloca apenas o texto após o ícone
+      // primeiro limpa nós de texto não-elementos
+      Array.from(button.childNodes).forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE) node.remove();
+      });
+      // acrescenta um span com o texto
+      let span = button.querySelector('.inscrito-text');
+      if (!span) {
+        span = document.createElement('span');
+        span.className = 'inscrito-text';
+        span.style.marginLeft = '8px';
+        button.appendChild(span);
+      }
+      span.textContent = checkText;
+    } else {
+      // sem ícone: troca todo o conteúdo textual
+      button.textContent = checkText;
+    }
+
+    // visual + desativa interações
+    button.disabled = true;
+    button.style.pointerEvents = 'none';
+    button.setAttribute('aria-pressed', 'true');
+  }
+});
+</script>
+
+
+
 <body>
   <header class="main-header">
 
