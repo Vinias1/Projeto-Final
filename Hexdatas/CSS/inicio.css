@@ -522,7 +522,7 @@
 .section-title {
     font-size: 2rem;
     font-weight: 700;
-    color: #00e0ff);
+    color: #00e0ff;
     margin-bottom: 40px;
 }
 
@@ -561,7 +561,7 @@
       box-shadow: 0 0 30px var(--neon-green);
       transform: translateY(-6px);
       background: rgba(0,255,136,0.06);
-    
+
 }
 
 /* Estilo do Icone Wrapper (Círculo de Fundo) */
@@ -653,4 +653,90 @@
     /* ADICIONE ESTES DOIS PARA LINKS/CARROSSEL: */
     text-decoration: none; /* Remove o sublinhado do link */
     flex-shrink: 0;      /* Impede que os cartões encolham no Flexbox */
+}
+/* --- MENU DROPDOWN --- */
+
+/* Container que segura o botão e o menu */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+  
+  display: flex;
+  align-items: center;
+}
+
+/* Ícone da setinha para baixo com animação */
+.arrow-icon {
+  font-size: 1.1rem;
+  margin-left: 2px;
+  transition: transform 0.3s ease;
+}
+
+/* Gira a setinha quando passa o mouse */
+.dropdown-container:hover .arrow-icon {
+  transform: rotate(180deg);
+  color: var(--neon-green);
+}
+
+/* O Menu Suspenso (A lista que aparece) */
+.dropdown-menu {
+  display: none; /* Escondido por padrão */
+  position: absolute;
+  top: 105%; /* Cola logo abaixo do header */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza em relação ao botão */
+  
+  background: rgba(13, 17, 23, 0.95); /* Fundo escuro do seu tema */
+  backdrop-filter: blur(12px); /* Efeito de vidro igual ao seu header */
+  border: 1px solid rgba(0, 255, 136, 0.2); /* Borda neon suave */
+  border-radius: 0 0 12px 12px; /* Arredonda só as pontas de baixo */
+  
+  min-width: 200px;
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+  padding: 10px 0;
+  padding-top: 15px;
+  z-index: 1001; /* Fica acima de tudo */
+  animation: fadeIn 0.3s ease;
+}
+
+/* Mostra o menu ao passar o mouse */
+.dropdown-container:hover .dropdown-menu {
+  display: block !important;
+}
+
+/* Estilo dos links dentro do menu */
+.dropdown-menu a {
+  color: var(--text-light);
+  padding: 12px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent; /* Preparação para o hover */
+}
+
+/* Hover nos itens da lista */
+.dropdown-menu a:hover {
+  background: rgba(0, 255, 136, 0.05);
+  color: var(--neon-green);
+  border-left: 3px solid var(--neon-green); /* Detalhe visual na esquerda */
+  padding-left: 25px; /* Pequeno movimento para a direita */
+}
+
+.dropdown-menu a i {
+  font-size: 1.2rem;
+  color: var(--neon-cyan);
+}
+
+.dropdown-menu a:hover i {
+  color: var(--neon-green);
+  text-shadow: 0 0 8px var(--neon-green);
+}
+
+/* Pequena animação de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
 }
