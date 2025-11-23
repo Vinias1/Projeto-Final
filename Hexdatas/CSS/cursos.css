@@ -438,3 +438,132 @@
   .nav-link span { display: none; } /* Esconde texto em telas pequenas, deixa só ícones */
   .btn-login { padding: 4px 12px; font-size: 0.8rem; }
 }
+
+/* ---------- NOVAS REGRAS (ANIMAÇÕES, FILTROS, DIVISORES, SHOW MORE) ---------- */
+
+/* Barra de filtros fixa */
+.filters-wrapper {
+  position: sticky;
+  top: 76px;                 /* abaixo do header fixo */
+  z-index: 900;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 16px;
+  margin-bottom: 18px;
+}
+.filters-inner {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(0,255,136,0.06);
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,255,136,0.03);
+  max-width: 1200px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* botões de filtro */
+.filter-btn {
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid rgba(0,255,136,0.12);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .18s ease;
+  white-space: nowrap;
+}
+.filter-btn:hover { transform: translateY(-3px); border-color: var(--neon-green); color: var(--neon-green); box-shadow: 0 0 12px rgba(0,255,136,0.07); }
+.filter-btn.active { background: linear-gradient(90deg, rgba(0,255,136,0.08), rgba(0,224,255,0.04)); color: var(--neon-green); border-color: var(--neon-green); }
+
+/* busca */
+#search-input {
+  margin-left: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,224,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: var(--text-light);
+  min-width: 180px;
+}
+
+/* seção e separador */
+.category-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 22px 0 34px;
+  padding: 18px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+  border: 1px solid rgba(0,224,255,0.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  z-index: 1;
+}
+.category-header h2 {
+  margin: 0 0 14px 0;
+  color: var(--neon-cyan);
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 0 8px rgba(0,224,255,0.06);
+}
+
+/* ajustes visuais dos cards (mantém suas regras existentes) */
+.cursos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+/* animação fade para mostrar/ocultar */
+.curso-card {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .35s ease, transform .35s ease, box-shadow .25s ease;
+}
+.curso-card.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(.995);
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* destaque ao passar o mouse (mais suave) */
+.curso-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(0,255,136,0.08);
+}
+
+/* show-more */
+.show-more-wrapper { display:flex; justify-content:center; margin-top:14px; }
+.show-more-btn {
+  background: transparent;
+  border: 1px solid rgba(0,255,136,0.12);
+  color: var(--neon-green);
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all .18s;
+}
+.show-more-btn:hover { transform: translateY(-3px); box-shadow: 0 0 14px rgba(0,255,136,0.06); }
+
+/* pequenas melhorias responsivas */
+@media (max-width: 720px) {
+  .filters-inner { padding: 6px; gap:6px; }
+  #search-input { display: none; } /* esconde a busca em telas bem pequenas */
+  .category-section { padding: 12px; }
+}
+
+/* smooth scroll para links internos */
+html { scroll-behavior: smooth; }
