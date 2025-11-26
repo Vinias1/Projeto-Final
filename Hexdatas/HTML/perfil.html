@@ -46,10 +46,14 @@
 
       <div class="profile-right">
         <div class="profile-actions">
-          <button class="btn btn-primary" onclick="editarPerfil()"><i class="bx bx-edit"></i> Editar perfil</button>
-          <button class="btn" onclick="alterarSenha()"><i class="bx bx-lock"></i> Alterar senha</button>
-          <button class="btn" onclick="meusCursos()"><i class="bx bx-book-open"></i> Meus cursos</button>
-          <button class="btn" onclick="acessarMenu()"><i class="bx bx-grid-alt"></i> Ir para menu</button>
+        <button class="btn" onclick="editarPerfil()"><i class='bx bx-edit'></i> Editar perfil</button>
+
+        <button class="btn" onclick="alterarSenha()"><i class='bx bx-lock'></i> Alterar senha</button>
+
+        <button class="btn" onclick="meusCursos()"><i class='bx bx-book-open'></i> Meus cursos</button>
+
+        <button class="btn" onclick="acessarMenu()"><i class='bx bx-grid-alt'></i> Ir para menu</button>
+
         </div>
 
         <div class="profile-bio">
@@ -98,30 +102,29 @@
     </div>
   </footer>
 
-  <script>
-    // ações sem backend (substitua por rotas reais se necessário)
-    function editarPerfil() {
-      alert('Abrir edição de perfil (simulado).');
-      // exemplo: window.location.href = 'perfil-editar.html';
-    }
-    function alterarSenha() {
-      alert('Abrir alteração de senha (simulado).');
-    }
-    function meusCursos() {
-      window.location.href = 'cursos.html';
-    }
-    function acessarMenu() {
-      window.location.href = 'menu.html';
-    }
-    function logoutConfirm() {
-      if (confirm('Deseja realmente sair?')) {
-        // ação sem backend: redirecionar ao login
-        window.location.href = 'login.html';
-      }
-    }
+ <script>
+  function editarPerfil() {
+    window.location.href = 'menuConfig.html'; 
+  }
 
-    // exemplo: carregar dados dinamicamente (se quiser simular)
-    // document.getElementById('user-name').textContent = localStorage.getItem('nome') || 'Usuário';
-  </script>
+  function alterarSenha() {
+    window.location.href = 'recuperar.html';
+  }
+
+  function meusCursos() {
+    window.location.href = 'cursos.html';
+  }
+
+  function acessarMenu() {
+    window.location.href = 'menu.html';
+  }
+
+  function logoutConfirm() {
+    if (confirm('Deseja realmente sair?')) {
+      window.location.href = 'login.html';
+    }
+  }
+</script>
+
 </body>
 </html>

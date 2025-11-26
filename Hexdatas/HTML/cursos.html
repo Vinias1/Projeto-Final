@@ -9,7 +9,7 @@
   <!-- mantém seu CSS existente, aqui apontando pro mesmo arquivo -->
   <link rel="stylesheet" type="text/css" href="../CSS/cursos.css">
 
-  <!-- novo JS de filtros -->
+  <!-- novo JS de filtros (mantive o seu) -->
   <script defer src="../JS/cursos.js"></script>
 </head>
 <body>
@@ -25,7 +25,7 @@
       <a href="https://wa.me/5581995144700" class="nav-link" target="_blank"><i class='bx bxl-whatsapp'></i>
                 Suporte</a>
       <a href="sobreNos.html" class="nav-link"><i class='bx bx-home'></i> Sobre nós</a>
-      <a href="login.html" class="btn-login">Entrar</a>
+      <a href="perfil.html" class="btn-login">Perfil</a>
     </nav>
   </header>
 
@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <!-- PONTO DA TELA QUE SERÁ MOSTRADO NO SCROLL (AGORA POSICIONADO CORRETAMENTE) -->
+    <!-- PONTO DA TELA QUE SERÁ MOSTRADO NO SCROLL -->
     <div id="area-cursos"></div>
 
     <!-- PRIMEIRA SEÇÃO DE CURSOS -->
@@ -70,7 +70,7 @@
           </div>
           <div class="curso-actions">
             <a class="btn-acessar" href="#" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a>
-            <a class="btn-acessar" href="#"><i class='bx bx-check-square'></i> Inscrever-se</a>
+            <button type="button" class="btn-inscrever" data-course="data-science-basico"><i class='bx bx-check-square'></i> Inscrever-se</button>
           </div>
         </article>
         <article class="curso-card" data-categories="analise-dados,dados-ia">
@@ -81,7 +81,7 @@
           </div>
           <div class="curso-actions">
             <a class="btn-acessar" href="https://www.youtube.com/watch?v=S9uPNppGsGo&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6&index=1" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a>
-            <a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a>
+            <button type="button" class="btn-inscrever" data-course="python-basico"><i class='bx bx-check-square'></i> Inscrever-se</button>
           </div>
         </article>
         <article class="curso-card" data-categories="analise-dados,dados-ia">
@@ -92,7 +92,7 @@
           </div>
           <div class="curso-actions">
             <a class="btn-acessar" href="https://www.youtube.com/watch?v=ZNFVFTqaL60&list=PLLVddSbilcumgeyk0z6ko5U_FYPfbRO2C&index=1" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a>
-            <a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a>
+            <button type="button" class="btn-inscrever" data-course="django"><i class='bx bx-check-square'></i> Inscrever-se</button>
           </div>
         </article>
         <article class="curso-card" data-categories="analise-dados,dados-ia">
@@ -103,7 +103,7 @@
           </div>
           <div class="curso-actions">
             <a class="btn-acessar" href="https://www.youtube.com/watch?v=hD0uJln4S2Y&list=PL3ZslI15yo2pfkf7EGNR14xTwe-wZ2bNX" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a>
-            <a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a>
+            <button type="button" class="btn-inscrever" data-course="pandas-py"><i class='bx bx-check-square'></i> Inscrever-se</button>
           </div>
         </article>
 
@@ -125,7 +125,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Iniciante</span><span><i class="bx bx-time-five"></i> 90h</span><span><i class="bx bx-user-circle"></i> Prof. Gustavo Guanabara</span></div>
             <p>Crie layouts responsivos, Flexbox, Grid e componentes reutilizáveis.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="html-css-profissional"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
 
         <article class="curso-card" data-categories="frontend">
@@ -134,7 +134,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Intermediário</span><span><i class="bx bx-time-five"></i> 2h 25min</span><span><i class="bx bx-user-circle"></i> Prof. Felipe Rocha</span></div>
             <p>React.js é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=2RWsLmu8yVc" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=2RWsLmu8yVc" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="introducao-react"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
         <article class="curso-card" data-categories="frontend">
           <div>
@@ -142,7 +142,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Iniciante</span><span><i class="bx bx-time-five"></i> 1h 12min</span><span><i class="bx bx-user-circle"></i> Prof. Fernanda Kipper</span></div>
             <p>você aprenderá a sintaxe básica do Angular e os conceitos essenciais para entender seu funcionamento.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=VumdXFJ4n7o" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=VumdXFJ4n7o" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="angular-do-zero"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
         <article class="curso-card" data-categories="frontend">
           <div>
@@ -150,7 +150,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Iniciante </span><span><i class="bx bx-time-five"></i> 87h</span><span><i class="bx bx-user-circle"></i> Prof. Matheus Battisti</span></div>
             <p>Com o Vue, é possível desenvolver projetos colocando-os em aplicações gigantescas, sendo útil em várias tarefas. O framework Vue é a estrutura por trás do Alibaba, 9gag, Reuters e Xiaomi.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=wsAQQioPIJs&list=PLnDvRpP8BnezDglaAvtWgQXzsOmXUuRHL" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=wsAQQioPIJs&list=PLnDvRpP8BnezDglaAvtWgQXzsOmXUuRHL" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="vue-3"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
       </div>
       <div class="show-more-wrapper"><button class="show-more-btn" data-target="frontend">Mostrar mais</button></div>
@@ -166,7 +166,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Iniciante</span><span><i class="bx bx-time-five"></i> 210h 30min</span><span><i class="bx bx-user-circle"></i> Prof. Gustavo Guanabara</span></div>
             <p>MVC, roteamento e boas práticas de arquitetura moderna.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=TfsO0BGvGn0&list=PLHz_AreHm4dlFPrCXCmd5g92860x_Pbr_" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=TfsO0BGvGn0&list=PLHz_AreHm4dlFPrCXCmd5g92860x_Pbr_" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="php-moderno-mvc"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
 
         <article class="curso-card" data-categories="backend">
@@ -175,7 +175,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Intermediário</span><span><i class="bx bx-time-five"></i> 15h 30min</span><span><i class="bx bx-user-circle"></i> Prof. Lucas Souza</span></div>
             <p>APIs com Express, JWT e integração com bancos de dados.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=SVepTuBK4V0&list=PL29TaWXah3iaaXDFPgTHiFMBF6wQahurP" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=SVepTuBK4V0&list=PL29TaWXah3iaaXDFPgTHiFMBF6wQahurP" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="nodejs"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
         
         <article class="curso-card" data-categories="backend">
@@ -184,7 +184,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Iniciante</span><span><i class="bx bx-time-five"></i> 20h </span><span><i class="bx bx-user-circle"></i> Prof. Lucas Badico</span></div>
             <p>Introdução a Golang, criando seus primeiros programas em GO!</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=IfhdsWjsujg&list=PL-tb3yiDrcKr-OryokjvgHWeOLNJ1quIr" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=IfhdsWjsujg&list=PL-tb3yiDrcKr-OryokjvgHWeOLNJ1quIr" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="golang-basico"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
 
         <article class="curso-card" data-categories="backend">
@@ -193,7 +193,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Iniciante</span><span><i class="bx bx-time-five"></i> 134h </span><span><i class="bx bx-user-circle"></i> Prof. Lucas Badico</span></div>
             <p>Introdução a Golang, criando seus primeiros programas em GO!</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=IfhdsWjsujg&list=PL-tb3yiDrcKr-OryokjvgHWeOLNJ1quIr" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=IfhdsWjsujg&list=PL-tb3yiDrcKr-OryokjvgHWeOLNJ1quIr" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="java-spring-boot"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
       </div>
       <div class="show-more-wrapper"><button class="show-more-btn" data-target="backend">Mostrar mais</button></div>
@@ -209,7 +209,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Iniciante</span><span><i class="bx bx-time-five"></i> 25h 40min</span><span><i class="bx bx-user-circle"></i> Prof. Luiz Ótavio</span></div>
             <p>Modelagem, queries avançadas e integração com PHP.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=lHYV_H1526Q&list=PLbIBj8vQhvm2WT-pjGS5x7zUzmh4VgvRk" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=lHYV_H1526Q&list=PLbIBj8vQhvm2WT-pjGS5x7zUzmh4VgvRk" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="mysql"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
 
         <article class="curso-card" data-categories="banco-dados,backend">
@@ -218,7 +218,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Iniciante</span><span><i class="bx bx-time-five"></i> 13h 40min</span><span><i class="bx bx-user-circle"></i> Prof. Dfilitto</span></div>
             <p>Aprenda como trabalhar com o banco de dados não relacional MongoDB.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=ykucnHrhLUU&list=PLfvOpw8k80WpKTtloa7fMbfPWL7D6X5cC" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=ykucnHrhLUU&list=PLfvOpw8k80WpKTtloa7fMbfPWL7D6X5cC" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="mongodb"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
       </div>
       <div class="show-more-wrapper"><button class="show-more-btn" data-target="banco-dados">Mostrar mais</button></div>
@@ -234,16 +234,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Avançado</span><span><i class="bx bx-time-five"></i> 12h</span><span><i class="bx bx-user-circle"></i> Prof. Téo</span></div>
             <p>Modelos clássicos, validação e deploy simples.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=oz_rZ92Tmls&list=PLvlkVRRKOYFR6_LmNcJliicNan2TYeFO2" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
-        </article>
-
-        <article class="curso-card" data-categories="dados-ia">
-          <div>
-            <div class="curso-header"><i class="bx bx-brain"></i><h3>Inteligencia Artificial <span class="badge">🔥 Em alta</span></h3></div>
-            <div class="curso-info"><span><i class="bx bx-signal-5"></i> Básico</span><span><i class="bx bx-time-five"></i> 47h</span><span><i class="bx bx-user-circle"></i> Prof. Gustavo Guanabara</span></div>
-            <p>bases fundamentais da IA, para que qualquer pessoa possa fazer uso de ferramentas de Inteligência Artificial de forma simples e obtendo os melhores resultados, usando técnicas como a Engenharia de Prompt.</p>
-          </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=oz_rZ92Tmls&list=PLvlkVRRKOYFR6_LmNcJliicNan2TYeFO2" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="#"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="machine-learning-pratico"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
       </div>
       <div class="show-more-wrapper"><button class="show-more-btn" data-target="dados-ia">Mostrar mais</button></div>
@@ -259,16 +250,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Todos os níveis</span><span><i class="bx bx-time-five"></i> 6h 30min</span><span><i class="bx bx-user-circle"></i> Prof. André Oliveira</span></div>
             <p>Aprenda a colaborar com equipes técnicas e gerenciar conflitos.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=5H6OULv2od8&list=PLFKhhNd35zq8Tbp9cuJB5opcB3mvUKT7G" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
-        </article>
-
-        <article class="curso-card" data-categories="soft-skills">
-          <div>
-            <div class="curso-header"><i class="bx bx-chat"></i><h3>Engenharia Social</h3></div>
-            <div class="curso-info"><span><i class="bx bx-signal-5"></i> Todos os níveis</span><span><i class="bx bx-time-five"></i> 1h 10min</span><span><i class="bx bx-user-circle"></i> Prof. Joosy</span></div>
-            <p>Conteudo introdutorio sobre engenharia social e como pode ser usada.</p>
-          </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=5H6OULv2od8&list=PLFKhhNd35zq8Tbp9cuJB5opcB3mvUKT7G" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="#"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="comunicacao-trabalho-equipe"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
       </div>
       <div class="show-more-wrapper"><button class="show-more-btn" data-target="soft-skills">Mostrar mais</button></div>
@@ -284,7 +266,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Intermediário</span><span><i class="bx bx-time-five"></i> 6h</span><span><i class="bx bx-user-circle"></i> Prof. Laura Mendes</span></div>
             <p>CI/CD, automação e monitoramento de aplicações.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=1FZZ7LT3FfA&list=PLPqoPgWuohm6GglkKJ8oW10j9Te_YyeV9" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="#"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="introducao-devops"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
 
         <article class="curso-card" data-categories="devops">
@@ -302,7 +284,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Iniciante</span><span><i class="bx bx-time-five"></i> 56h 30min</span><span><i class="bx bx-user-circle"></i> Prof. Gustavo Guanabara</span></div>
             <p>Containers, Dockerfile, docker-compose e workflows modernos.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=anFV6z8pEVU&list=PLAp37wMSBouBnNup2tD-mC36JT96vHBZy" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="#"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="docker-para-desenvolvedores"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
       </div>
       <div class="show-more-wrapper"><button class="show-more-btn" data-target="devops">Mostrar mais</button></div>
@@ -315,10 +297,10 @@
         <article class="curso-card" data-categories="core,frontend">
           <div>
             <div class="curso-header"><i class="bx bx-code"></i><h3>JavaScript do Zero ao Avançado <span class="badge">🔥 Em alta</span></h3></div>
-            <div class="curso-info"><span><i class="bx bx-signal-5"></i> Todos os níveis</span><span><i class="bx bx-time-five"></i> 130h</span><span><i class="bx bx-user-circle"></i> Prof. Marina Dias</span></div>
+            <div class="curso-info"><span><i class="bx bx-signal-5"></i> Todos os níveis</span><span><i class="bx bx-time-five"></i> 10h</span><span><i class="bx bx-user-circle'></i> Prof. Marina Dias</span></div>
             <p>ES6+, DOM, assíncrono, padrões modernos e boas práticas.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=vEwPnjqWQ-g&list=PL2Fdisxwzt_d590u3uad46W-kHA0PTjjw" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="#"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="javascript-zero-avancado"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
 
         <article class="curso-card" data-categories="analise-dados,dados-ia">
@@ -331,6 +313,7 @@
             <a class="btn-acessar" href="https://www.youtube.com/watch?v=S9uPNppGsGo&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6&index=1" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a>
             <a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a>
           </div>
+          <div class="curso-actions"><a class="btn-acessar" href="#"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="introducao-ao-python"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
 
         <article class="curso-card" data-categories="core">
@@ -339,7 +322,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Intermediário</span><span><i class="bx bx-time-five"></i> 14h</span><span><i class="bx bx-user-circle"></i> Prof. Glaucia Lemos</span></div>
             <p>Tipagem estática, generics e patterns escaláveis.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=u7K1sdnCv5Y&list=PLb2HQ45KP0Wsk-p_0c6ImqBAEFEY-LU9H" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="#"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="typescript-para-js-seguro"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
 
         <article class="curso-card" data-categories="core">
@@ -348,7 +331,7 @@
             <div class="curso-info"><span><i class="bx bx-signal-5"></i> Intermediário</span><span><i class="bx bx-time-five"></i> 80h</span><span><i class="bx bx-user-circle"></i> Prof. Felipe Castro</span></div>
             <p>Desenvolvimento web e APIs com .NET moderno.</p>
           </div>
-          <div class="curso-actions"><a class="btn-acessar" href="https://www.youtube.com/watch?v=PKMm-cHe56g" target="_blank"><i class='bx bx-play-circle'></i> Ver curso</a><a class="btn-acessar" href="cadastro.html"><i class='bx bx-check-square'></i> Inscrever-se</a></div>
+          <div class="curso-actions"><a class="btn-acessar" href="#"><i class='bx bx-play-circle'></i> Ver curso</a><button type="button" class="btn-inscrever" data-course="csharp-dotnet-core"><i class='bx bx-check-square'></i> Inscrever-se</button></div>
         </article>
       </div>
       <div class="show-more-wrapper"><button class="show-more-btn" data-target="core">Mostrar mais</button></div>
@@ -365,6 +348,35 @@
       <div class="social-links"><a href="#"><i class='bx bxl-github'></i></a><a href="#"><i class='bx bxl-linkedin'></i></a><a href="#"><i class='bx bxl-instagram'></i></a></div>
     </div>
   </footer>
+
+  <!-- Script para transformar o botão em 'Inscrito' e persistir no localStorage -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const stored = JSON.parse(localStorage.getItem('inscritos') || '[]');
+      const inscritos = new Set(stored);
+
+      document.querySelectorAll('.btn-inscrever').forEach(btn => {
+        const id = btn.dataset.course || btn.textContent.trim();
+        // estado inicial
+        if (inscritos.has(id)) {
+          btn.innerHTML = "<i class='bx bx-check'></i> Inscrito";
+          btn.classList.add('inscrito');
+          btn.disabled = true;
+        }
+
+        btn.addEventListener('click', function () {
+          // muda visual
+          this.innerHTML = "<i class='bx bx-check'></i> Inscrito";
+          this.classList.add('inscrito');
+          this.disabled = true;
+
+          // persiste
+          inscritos.add(id);
+          localStorage.setItem('inscritos', JSON.stringify(Array.from(inscritos)));
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>

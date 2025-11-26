@@ -13,7 +13,7 @@
 }
 
 /* Reset */
-*{ box-sizing: border-box }
+*{ box-sizing: border-box; }
 
 body{
   margin: 0;
@@ -27,18 +27,6 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 
-body::before{
-  content: '';
-  position: fixed;
-  top: -120px;
-  left: -140px;
-  width: 520px;
-  height: 520px;
-  background: radial-gradient(circle, rgba(0, 255, 136, 0.10), transparent 70%);
-  filter: blur(90px);
-  z-index: 0;
-}
-
 .login-container{
   width: 100%;
   max-width: var(--max-width);
@@ -48,7 +36,7 @@ body::before{
 .login-card{
   background: var(--card-bg);
   border: 1px solid rgba(0,255,136,0.08);
-  padding: 30px;
+  padding: 28px;
   border-radius: calc(var(--radius) + 2px);
   box-shadow: 0 8px 30px rgba(0,0,0,0.6);
   backdrop-filter: blur(8px);
@@ -58,28 +46,30 @@ body::before{
 .login-card h1{
   margin: 0 0 6px;
   color: var(--neon-green);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   text-shadow: 0 0 10px rgba(0,255,136,0.10);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:center;
 }
 
 .login-card p{
-  margin: 0 0 18px;
+  margin: 0 0 14px;
   color: rgba(214,255,241,0.85);
   font-size: 0.95rem;
 }
 
-/* Mensagens e inputs reaproveitam classes do login.css */
-/* (copie as classes alerta-sucesso, alerta-erro, input-group, field-error, btn-login, loader, etc.)
-   Para evitar duplicação você pode manter apenas um arquivo CSS shared (ex.: auth.css) e
-   apontar ambos os HTMLs para ele. */
+/* status messages */
+.status-wrapper { min-height: 1.6em; margin-bottom: 10px; }
 
+/* success / error alerts */
 .alerta-sucesso{
   background: linear-gradient(90deg, rgba(0,255,136,0.06), rgba(0,224,255,0.04));
   border: 1px solid rgba(0,255,136,0.12);
   color: var(--neon-green);
   padding: 10px 12px;
   border-radius: 8px;
-  margin-bottom: 12px;
   text-align: center;
 }
 .alerta-erro{
@@ -88,13 +78,10 @@ body::before{
   color: var(--err);
   padding: 10px 12px;
   border-radius: 8px;
-  margin-bottom: 12px;
   text-align: center;
 }
 
-/* Reaproveitar input-group, field-error, btn-login, loader e link-register do login.css */
-/* Para simplicidade do exemplo, cole o conteúdo das classes abaixo (ou crie auth.css único). */
-
+/* form */
 .input-group{
   text-align: left;
   margin-bottom: 12px;
@@ -107,8 +94,8 @@ body::before{
 }
 .input-group input{
   width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
+  padding: 12px 12px;
+  border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.06);
   background: rgba(255,255,255,0.02);
   color: var(--text-light);
@@ -128,6 +115,7 @@ body::before{
   min-height: 1em;
 }
 
+/* botões */
 .btn-login{
   width: 100%;
   padding: 12px 14px;
@@ -142,6 +130,11 @@ body::before{
   margin-top: 8px;
   position: relative;
 }
+.btn-login.small-btn{
+  width: auto;
+  padding: 10px 12px;
+  font-size: 0.92rem;
+}
 .btn-login:hover:not(:disabled),
 .btn-login:focus:not(:disabled){
   background: var(--neon-cyan);
@@ -149,6 +142,14 @@ body::before{
   transform: translateY(-3px);
   box-shadow: 0 12px 40px rgba(0,224,255,0.12);
 }
+.btn-login:disabled{
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* carregador (loader) */
 .loader{
   display: inline-block;
   width: 18px;
@@ -158,11 +159,26 @@ body::before{
   border-radius: 50%;
   animation: spin 0.9s linear infinite;
   vertical-align: middle;
+  margin-left: 8px;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* painel confirmação */
+.confirm-panel{
+  display: none;
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,224,255,0.06);
+  background: linear-gradient(180deg, rgba(0,255,136,0.02), rgba(0,224,255,0.02));
+  text-align: left;
+}
+.confirm-panel.visible { display: block; }
+.confirm-panel p { margin: 0 0 8px 0; color: rgba(214,255,241,0.9); }
+.confirm-actions{ display:flex; gap:10px; align-items:center; }
+
 .link-register{
-  margin-top: 18px;
+  margin-top: 8px;
   color: rgba(214,255,241,0.85);
   font-size: 0.95rem;
 }
@@ -172,7 +188,7 @@ body::before{
   font-weight: 600;
 }
 
-/* Responsividade */
+/* responsividade */
 @media (max-width:420px){
   .login-card{ padding: 18px; border-radius: 10px; }
 }
