@@ -2,48 +2,79 @@
 <html lang="pt-br">
 
 <head>
+  <!-- Define o conjunto de caracteres da página -->
   <meta charset="UTF-8">
+
+  <!-- Responsividade para dispositivos móveis -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título da página exibido na aba do navegador -->
   <title>Login</title>
+
+  <!-- Ícones Boxicons (biblioteca de ícones) -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Arquivo CSS externo responsável pelo estilo da página -->
   <link rel="stylesheet" type="text/css" href="../CSS/login.css">
 </head>
 
 <body>
 
+  <!-- CONTAINER PRINCIPAL DE LOGIN -->
   <div class="login-container">
 
+    <!-- Cartão visual onde ficam os campos de login -->
     <div class="login-card">
+
+      <!-- Título da área de login -->
       <h2><i class="bx bx-log-in"></i> Bem-vindo(a)</h2>
       <p>Faça login para acessar o sistema</p>
 
-      <!-- ALTERADO: agora apenas redireciona -->
-      <form onsubmit="redirect(event)">
-        <div class="input-group">
-          <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
-        </div>
+<!-- FORMULÁRIO DE LOGIN
+     onsubmit chama redirect() que agora usa 'inicio.html' (mesma pasta HTML) -->
+<form onsubmit="redirect(event)">
 
-        <div class="input-group">
-          <label for="senha">Senha</label>
-          <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
-        </div>
+  <!-- CAMPO DE E-MAIL -->
+  <div class="input-group">
+    <label for="email">E-mail</label>
+    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+  </div>
 
-        <button type="submit" class="btn-login">Entrar</button>
-      </form>
+  <!-- CAMPO DE SENHA -->
+  <div class="input-group">
+    <label for="senha">Senha</label>
+    <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+  </div>
 
-      <div class="link-register">
-        <p>Não tem uma conta?
-          <a href="../HTML/cadastro.html">Cadastre-se</a>
-        </p>
-      </div>
+  <!-- BOTÃO PARA ENVIAR (FAZER LOGIN) -->
+  <button type="submit" class="btn-login">Entrar</button>
+</form>
+
+<!-- LINKS AUXILIARES -->
+<div class="link-register">
+  <p>Não tem uma conta?
+    <!-- Cadastro está na mesma pasta HTML -->
+    <a href="cadastro.html">Cadastre-se</a>
+  </p>
+
+  <p>
+    Esqueceu a senha?
+    <!-- Recuperar está na mesma pasta HTML -->
+    <a href="recuperar.html">Clique aqui</a>
+  </p>
+</div>
+
+
     </div>
   </div>
 
-  <!-- SCRIPT DE REDIRECIONAMENTO -->
+  
+  <!-- SCRIPT RESPONSÁVEL POR REDIRECIONAR O USUÁRIO APÓS O "LOGIN" -->
   <script>
     function redirect(e) {
+      // Impede que o formulário recarregue ou envie os dados
       e.preventDefault();
+      // Redireciona o usuário para a página inicial
       window.location.href = "../HTML/inicio.html";
     }
   </script>

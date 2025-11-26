@@ -1,44 +1,63 @@
 <!DOCTYPE html>
+<!--
+  Documento HTML principal para o Painel do Sistema.
+  Este arquivo exibe os botões principais para navegação entre módulos.
+-->
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <!-- Faz o layout se adaptar ao tamanho de tela (mobile first) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Menu Principal</title>
+
+  <!-- Importação dos ícones Boxicons -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Estilo externo específico do menu -->
   <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 
 <body>
+  <!-- Título principal do painel -->
   <h1><i class='bx bx-terminal'></i> Painel Principal</h1>
 
+  <!-- Container com os botões principais -->
   <div class="menu-container">
+
+    <!-- Botão que leva para a listagem de cursos -->
     <a href="index.html" class="menu-card">
       <i class='bx bx-code-alt'></i>
       <span>Cursos</span>
     </a>
 
+    <!-- Botão que leva para a área de usuários -->
     <a href="menuUsuarios.html" class="menu-card">
       <i class='bx bx-user'></i>
       <span>Usuários</span>
     </a>
 
+    <!-- Botão para página de configurações -->
     <a href="menuConfig.html" class="menu-card">
       <i class='bx bx-cog'></i>
       <span>Configurações</span>
     </a>
 
+    <!-- Botão para a área do perfil do usuário -->
     <a href="menuPerfil.html" class="menu-card">
       <i class='bx bx-id-card'></i>
       <span>Perfil</span>
     </a>
   </div>
 
+  <!-- Link para logout (apenas redireciona) -->
   <div class="logout">
     <a href="index.html"><i class='bx bx-log-out'></i> Sair</a>
   </div>
 
+  <!-- Rodapé simples -->
   <footer>
-    <p>© 2025 Portal de Cursos - Desenvolvido em HTML/CSS/JS </p>
+    <p>© 2025 Portal de Cursos - Desenvolvido em HTML/CSS/JS</p>
   </footer>
 </body>
 </html>

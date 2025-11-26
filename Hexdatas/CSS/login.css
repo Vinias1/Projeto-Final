@@ -1,138 +1,155 @@
+
+
 :root{
-      --neon-green: #00ff88;
-      --neon-cyan: #00e0ff;
-      --text-light: #d6fff1;
-      --bg-dark: #0d1117;
-      --card-bg: rgba(255,255,255,0.03);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      min-height:100vh;
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #0f2027, #08141c 80%);
-      color:var(--text-light);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:40px 16px;
-    }
+  /* Variáveis de tema — facilite futuras alterações centralizando cores aqui */
+  --neon-green: #00ff88;
+  --neon-cyan: #00e0ff;
+  --text-light: #d6fff1;
+  --bg-dark: #0d1117;
+  --card-bg: rgba(255,255,255,0.03);
+}
 
-    /* brilho */
-    body::before{
-      content:'';
-      position:fixed;
-      top:-100px;
-      left:-120px;
-      width:480px;
-      height:480px;
-      background: radial-gradient(circle, rgba(0, 255, 136, 0.12), transparent 70%);
-      filter: blur(90px);
-      z-index:0;
-    }
+/* Box sizing global — evita surpresas com padding/border no dimensionamento */
+*{ box-sizing: border-box }
 
-    .login-container{
-      width:100%;
-      max-width:420px;
-      z-index:1;
-    }
+/* ===== Body / layout principal ===== */
+body{
+  margin: 0;
+  min-height: 100vh; /* garante que o fundo ocupe a tela inteira */
+  font-family: 'Poppins', sans-serif; /* importar no HTML */
+  background: radial-gradient(circle at top, #0f2027, #08141c 80%);
+  color: var(--text-light);
+  display: flex;
+  align-items: center; /* centra verticalmente quando possível */
+  justify-content: center; /* centra horizontalmente */
+  padding: 40px 16px;
+}
 
-    .login-card{
-      background: var(--card-bg);
-      border:1px solid rgba(0,255,136,0.08);
-      padding:34px;
-      border-radius:14px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-      backdrop-filter: blur(8px);
-      text-align:center;
-    }
+/* Pseudo-elemento para brilho suave ao fundo (decorativo) */
+body::before{
+  content: '';
+  position: fixed;
+  top: -100px;
+  left: -120px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.12), transparent 70%);
+  filter: blur(90px);
+  z-index: 0; /* colocado atrás do conteúdo */
+}
 
-    .login-card h2{
-      margin:0 0 8px;
-      color: var(--neon-green);
-      text-shadow: 0 0 12px rgba(0,255,136,0.12);
-    }
+/* ===== Container do formulário ===== */
+.login-container{
+  width: 100%;
+  max-width: 420px; /* limite de largura para boa legibilidade */
+  z-index: 1; /* acima do brilho do body */
+}
 
-    .login-card p{
-      margin:0 0 20px;
-      color: rgba(214,255,241,0.8);
-      font-size:0.95rem;
-    }
+/* Cartão do login: vidro fosco com borda neon sutil */
+.login-card{
+  background: var(--card-bg);
+  border: 1px solid rgba(0,255,136,0.08);
+  padding: 34px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6); /* sombra para profundidade */
+  backdrop-filter: blur(8px); /* efeito vidro — custoso em alguns dispositivos */
+  text-align: center;
+}
 
-    .input-group{
-      text-align:left;
-      margin-bottom:14px;
-    }
+.login-card h2{
+  margin: 0 0 8px;
+  color: var(--neon-green);
+  text-shadow: 0 0 12px rgba(0,255,136,0.12);
+}
 
-    .input-group label{
-      display:block;
-      font-size:0.85rem;
-      margin-bottom:6px;
-      color: rgba(214,255,241,0.8);
-    }
+.login-card p{
+  margin: 0 0 20px;
+  color: rgba(214,255,241,0.8);
+  font-size: 0.95rem;
+}
 
-    .input-group input{
-      width:100%;
-      padding:10px 12px;
-      border-radius:8px;
-      border:1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.02);
-      color:var(--text-light);
-      outline:none;
-      transition: all .15s ease;
-    }
+/* ===== Campos de entrada ===== */
+.input-group{
+  text-align: left; /* label alinhado à esquerda */
+  margin-bottom: 14px;
+}
 
-    .input-group input:focus{
-      box-shadow: 0 0 18px rgba(0,224,255,0.06);
-      border-color: rgba(0,224,255,0.18);
-      transform: translateY(-1px);
-    }
+.input-group label{
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: rgba(214,255,241,0.8);
+}
 
-    .btn-login{
-      width:100%;
-      padding:12px 14px;
-      border-radius:10px;
-      border:1px solid var(--neon-cyan);
-      background: linear-gradient(90deg, rgba(0,224,255,0.06), rgba(0,255,136,0.03));
-      color:var(--neon-cyan);
-      font-weight:600;
-      cursor:pointer;
-      box-shadow: 0 6px 18px rgba(0,224,255,0.06);
-      transition: all .18s ease;
-      margin-top:8px;
-    }
+/* Inputs básicos — contraste e foco visível */
+.input-group input{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: var(--text-light);
+  outline: none; /* substituído por :focus para sinalização visual */
+  transition: all .15s ease;
+}
 
-    .btn-login:hover{
-      background: var(--neon-cyan);
-      color:#001820;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0,224,255,0.12);
-    }
+/* Estado de foco: importante para acessibilidade de teclado */
+.input-group input:focus{
+  box-shadow: 0 0 18px rgba(0,224,255,0.06);
+  border-color: rgba(0,224,255,0.18);
+  transform: translateY(-1px); /* leve elevação para feedback visual */
+}
 
-    .link-register{
-      margin-top:18px;
-      color: rgba(214,255,241,0.85);
-      font-size:0.95rem;
-    }
+/* ===== Botão principal ===== */
+.btn-login{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--neon-cyan);
+  background: linear-gradient(90deg, rgba(0,224,255,0.06), rgba(0,255,136,0.03));
+  color: var(--neon-cyan);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,224,255,0.06);
+  transition: all .18s ease;
+  margin-top: 8px;
+}
 
-    .link-register a{
-      color:var(--neon-green);
-      text-decoration:none;
-      font-weight:600;
-      margin-left:6px;
-    }
+.btn-login:hover{
+  background: var(--neon-cyan);
+  color: #001820; /* contraste com o cyan de fundo */
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,224,255,0.12);
+}
 
-    .alerta-sucesso{
-      background: linear-gradient(90deg, rgba(0,255,136,0.06), rgba(0,224,255,0.04));
-      border:1px solid rgba(0,255,136,0.12);
-      color:var(--neon-green);
-      padding:10px 12px;
-      border-radius:8px;
-      margin-bottom:16px;
-      text-align:center;
-      box-shadow: 0 6px 20px rgba(0,255,136,0.03);
-    }
+/* ===== Links e mensagens auxiliares ===== */
+.link-register{
+  margin-top: 18px;
+  color: rgba(214,255,241,0.85);
+  font-size: 0.95rem;
+}
 
-    @media (max-width:420px){
-      .login-card{ padding:20px; border-radius:12px;}
-    }
+.link-register a{
+  color: var(--neon-green);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+/* Caixa de sucesso (feedback ao usuário) */
+.alerta-sucesso{
+  background: linear-gradient(90deg, rgba(0,255,136,0.06), rgba(0,224,255,0.04));
+  border: 1px solid rgba(0,255,136,0.12);
+  color: var(--neon-green);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,255,136,0.03);
+}
+
+/* ===== Responsividade ===== */
+@media (max-width:420px){
+  .login-card{ padding: 20px; border-radius: 12px; }
+}
+

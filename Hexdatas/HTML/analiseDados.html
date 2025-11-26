@@ -2,271 +2,308 @@
 <html lang="pt-br">
 
 <head>
+  <!-- Metadados básicos -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hexdatas</title>
+  <meta name="description" content="Cursos de Análise de Dados: Python, Pandas, MySQL, Machine Learning e mais. Aprenda a transformar dados em insights." />
+  <title>Hexdatas — Análise de Dados</title>
+
+  <!-- Ícones (Boxicons) -->
+  <!-- Em produção, considere hospedar localmente ou usar Subresource Integrity (SRI) quando suportado -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- CSS externo: mantenha a estilização separada para facilitar manutenção -->
   <link rel="stylesheet" type="text/css" href="../CSS/cursos.css">
 </head>
 
 <body>
-  <header class="main-header">
+  <!-- Cabeçalho principal: contém logo e navegação global -->
+  <header class="main-header" role="banner">
 
-    <div class="logo-container">
-      <i class='bx bx-code-alt'></i> Hexdatas
+    <!-- Logo do site: ícone + nome -->
+    <div class="logo-container" aria-label="Hexdatas - Portal de Cursos">
+      <i class='bx bx-code-alt' aria-hidden="true"></i>
+      Hexdatas
     </div>
 
-    <nav class="main-nav">
-      <a href="inicio.html" class="nav-link active"><i class='bx bx-home'></i> Início</a>
+    <!-- Navegação principal: use role=navigation e aria-current para link ativo -->
+    <nav class="main-nav" role="navigation" aria-label="Menu principal">
+      <a href="inicio.html" class="nav-link active" aria-current="page"><i class='bx bx-home' aria-hidden="true"></i> Início</a>
 
-      <a href="cursos.html" class="bx bx-cursos"><i class='bx bx-book'></i> Cursos</a>
-      <a href="/Projeto-Final/public/suporte" class="nav-link"><i class='bx bx-support'></i> Suporte</a>
-      <a href="sobreNos.html" class="nav-link"><i class='bx bx-home'></i> Sobre nós</a>
+      <!-- Atenção: atributo de classe incorreto no link 'Cursos' (ex: class="bx bx-cursos") pode causar problemas de css -->
+      <!-- Recomendação: usar class="nav-link" e adicionar ícone dentro do elemento, conforme padrão acima -->
+      <a href="cursos.html" class="nav-link"><i class='bx bx-book' aria-hidden="true"></i> Cursos</a>
+
+      <!-- Link para rota de suporte; revisar se o caminho absoluto é intencional -->
+      <a href="/Projeto-Final/public/suporte" class="nav-link"><i class='bx bx-support' aria-hidden="true"></i> Suporte</a>
+
+      <a href="sobreNos.html" class="nav-link"><i class='bx bx-info-circle' aria-hidden="true"></i> Sobre nós</a>
+
+      <!-- Botão de login: pode ser estilizado como botão (role=button) ou mantido como link semântico -->
       <a href="login.html" class="btn-login">Entrar</a>
     </nav>
   </header>
-  <main class="content-wrapper"></main>
-  <h1><i class='bx bx-code-alt'></i> Análise de Dados </h1>
 
-  <p class="intro">
-    Domine o processo de transformar dados brutos em insights estratégicos. Aprenda técnicas de coleta, limpeza, visualização e interpretação para dar suporte à tomada de decisão em qualquer área de negócio.
-  </p>
+  <!-- Conteúdo principal da página. Mantemos uma wrapper para estilização. -->
+  <main class="content-wrapper" role="main">
 
-  <div class="cursos-container">
+    <!-- Título da página com ícone -->
+    <h1><i class='bx bx-code-alt' aria-hidden="true"></i> Análise de Dados</h1>
 
-    <article class="curso-card" role="article" aria-labelledby="title-php-mvc">
-      <div>
-        <div class="curso-header">
-          <i class="bx bx-logo-php" aria-hidden="true"></i>
-          <h3 id="title-php-mvc">Python 🐍
-            <span class="badge" aria-hidden="true">🔥 Em alta</span>
-          </h3>
-        </div>
-        <div class="curso-info" aria-hidden="false">
-          <span title="Nível"><i class="bx bx-signal-5"></i> Básico ao Avançado</span>
-          <span title="Duração"><i class="bx bx-time-five"></i> 120h 30min</span>
-          <span title="Professor"><i class="bx bx-user-circle"></i> Prof. Gustavo Guanabara</span>
-        </div>
-        <p>Crie aplicações em Python</p>
-      </div>
-      <div class="curso-actions">
-        <a class="btn-acessar" href="https://www.youtube.com/watch?v=S9uPNppGsGo&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6&index=1" target="_blank"
-          rel="noopener noreferrer">
-          <i class="bx bx-play-circle"></i> Ver curso
-        </a>
-        <a class="btn-acessar" href="cadastro.html" title="Inscrever-se">
-          <i class="bx bx-check-square"></i> Inscrever-se
-        </a>
-      </div>
-    </article>
+    <!-- Parágrafo introdutório explicando o objetivo da seção -->
+    <p class="intro">
+      Domine o processo de transformar dados brutos em insights estratégicos. Aprenda técnicas de coleta, limpeza, visualização e interpretação para dar suporte à tomada de decisão em qualquer área de negócio.
+    </p>
 
-    <article class="curso-card" role="article" aria-labelledby="title-javascript">
-      <div>
-        <div class="curso-header">
-          <i class="bx bx-code" aria-hidden="true"></i>
-          <h3 id="title-javascript">Django REST 
-            <span class="badge" aria-hidden="true">🔥 Em alta</span>
-          </h3>
-        </div>
-        <div class="curso-info" aria-hidden="false">
-          <span title="Nível"><i class="bx bx-signal-5"></i> Intermediário</span>
-          <span title="Duração"><i class="bx bx-time-five"></i> 40h</span>
-          <span title="Professor"><i class="bx bx-user-circle"></i> Prof. Jefferson Lobato</span>
-        </div>
-        <p>Django é um framework de alto nível escrito em Python que permite construir sites seguros, robustos e escaláveis de forma rápida e eficiente.</p>
-      </div>
-      <div class="curso-actions">
-        <a class="btn-acessar" href="https://www.youtube.com/watch?v=ZNFVFTqaL60&list=PLLVddSbilcumgeyk0z6ko5U_FYPfbRO2C&index=1" target="_blank"
-          rel="noopener noreferrer">
-          <i class="bx bx-play-circle"></i> Ver curso
-        </a>
-        <a class="btn-acessar" href="cadastro.html" title="Inscrever-se">
-          <i class="bx bx-check-square"></i> Inscrever-se
-        </a>
-      </div>
-    </article>
+    <!-- Lista de cards de cursos. Cada card é um artigo para melhorar semântica e acessibilidade. -->
+    <div class="cursos-container">
 
-    <article class="curso-card" role="article" aria-labelledby="title-python-basico">
-      <div>
-        <div class="curso-header">
-          <i class="bx bx-bolt" aria-hidden="true"></i>
-          <h3 id="title-python-basico">Introdução ao Python</h3>
-        </div>
-        <div class="curso-info" aria-hidden="false">
-          <span title="Nível"><i class="bx bx-signal-5"></i> Iniciante</span>
-          <span title="Duração"><i class="bx bx-time-five"></i> 5h</span>
-          <span title="Professor"><i class="bx bx-user-circle"></i> Prof. Lucas Andrade</span>
-        </div>
-        <p>Sintaxe, estrutura de dados, e pequenos projetos para fixar os conceitos.</p>
-      </div>
-      <div class="curso-actions">
-        <a class="btn-acessar" href="https://www.youtube.com/watch?v=S9uPNppGsGo" target="_blank"
-          rel="noopener noreferrer">
-          <i class="bx bx-play-circle"></i> Ver curso
-        </a>
-        <a class="btn-acessar" href="cadastro.html"
-          title="Inscrever-se">
-          <i class="bx bx-check-square"></i> Inscrever-se
-        </a>
-      </div>
-    </article>
+      <!-- Curso: Python (card) -->
+      <article class="curso-card" role="article" aria-labelledby="title-php-mvc">
+        <div>
+          <div class="curso-header">
+            <!-- Ícone representativo do curso (decorativo) -->
+            <i class="bx bx-logo-php" aria-hidden="true"></i>
+            <!-- Heading com id referenciado por aria-labelledby no artigo -->
+            <h3 id="title-php-mvc">Python 🐍
+              <span class="badge" aria-hidden="true">🔥 Em alta</span>
+            </h3>
+          </div>
 
-    <article class="curso-card" role="article" aria-labelledby="title-html-css">
-      <div>
-        <div class="curso-header">
-          <i class="bx bx-layout" aria-hidden="true"></i>
-          <h3 id="title-html-css">Pandas PY 🐍</h3>
-        </div>
-        <div class="curso-info" aria-hidden="false">
-          <span title="Nível"><i class="bx bx-signal-5"></i> Intermediário</span>
-          <span title="Duração"><i class="bx bx-time-five"></i> 8h 20min</span>
-          <span title="Professor"><i class="bx bx-user-circle"></i> Prof. Samuel Martins</span>
-        </div>
-        <p>É o "Excel do Python". Permite manipular tabelas, limpar dados e filtrar informações.</p>
-      </div>
-      <div class="curso-actions">
-        <a class="btn-acessar" href="https://www.youtube.com/watch?v=Ejkb_YpuHWs" target="_blank"
-          rel="noopener noreferrer">
-          <i class="bx bx-play-circle"></i> Ver curso
-        </a>
-        <a class="btn-acessar" href="/Projeto-Final/public/curso.php?id=html-css&action=enroll" title="Inscrever-se">
-          <i class="bx bx-check-square"></i> Inscrever-se
-        </a>
-      </div>
-    </article>
+          <!-- Informações resumidas: nível, duração e professor -->
+          <div class="curso-info">
+            <span title="Nível"><i class="bx bx-signal-5" aria-hidden="true"></i> Básico ao Avançado</span>
+            <span title="Duração"><i class="bx bx-time-five" aria-hidden="true"></i> 120h 30min</span>
+            <span title="Professor"><i class="bx bx-user-circle" aria-hidden="true"></i> Prof. Gustavo Guanabara</span>
+          </div>
 
-    <article class="curso-card" role="article" aria-labelledby="title-sql-mysql">
-      <div>
-        <div class="curso-header">
-          <i class="bx bx-database" aria-hidden="true"></i>
-          <h3 id="title-sql-mysql">Banco de Dados com MySQL</h3>
+          <p>Crie aplicações em Python</p>
         </div>
-        <div class="curso-info" aria-hidden="false">
-          <span title="Nível"><i class="bx bx-signal-5"></i> Intermediário</span>
-          <span title="Duração"><i class="bx bx-time-five"></i> 5h 40min</span>
-          <span title="Professor"><i class="bx bx-user-circle"></i> Prof. Sofia Ramos</span>
-        </div>
-        <p>Modelagem, normalização, queries avançadas e integração com PHP.</p>
-      </div>
-      <div class="curso-actions">
-        <a class="btn-acessar" href="https://www.youtube.com/results?search_query=mysql+tutorial+pt-br" target="_blank"
-          rel="noopener noreferrer">
-          <i class="bx bx-play-circle"></i> Ver curso
-        </a>
-        <a class="btn-acessar" href="/Projeto-Final/public/curso.php?id=sql-mysql&action=enroll" title="Inscrever-se">
-          <i class="bx bx-check-square"></i> Inscrever-se
-        </a>
-      </div>
-    </article>
 
-    <article class="curso-card" role="article" aria-labelledby="title-git-github">
-      <div>
-        <div class="curso-header">
-          <i class="bx bx-git-branch" aria-hidden="true"></i>
-          <h3 id="title-git-github">Git & GitHub — Fluxos de Trabalho</h3>
-        </div>
-        <div class="curso-info" aria-hidden="false">
-          <span title="Nível"><i class="bx bx-signal-5"></i> Todos os níveis</span>
-          <span title="Duração"><i class="bx bx-time-five"></i> 3h 20min</span>
-          <span title="Professor"><i class="bx bx-user-circle"></i> Prof. Daniel Freitas</span>
-        </div>
-        <p>Controle de versão, branches, pull requests e boas práticas colaborativas.</p>
-      </div>
-      <div class="curso-actions">
-        <a class="btn-acessar" href="https://www.youtube.com/results?search_query=git+github+tutorial+pt-br"
-          target="_blank" rel="noopener noreferrer">
-          <i class="bx bx-play-circle"></i> Ver curso
-        </a>
-        <a class="btn-acessar" href="/Projeto-Final/public/curso.php?id=git-github&action=enroll" title="Inscrever-se">
-          <i class="bx bx-check-square"></i> Inscrever-se
-        </a>
-      </div>
-    </article>
+        <!-- Ações do curso: ver e inscrever-se. Os links externos usam target="_blank" com rel apropriado. -->
+        <div class="curso-actions">
+          <a class="btn-acessar" href="https://www.youtube.com/watch?v=S9uPNppGsGo&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6&index=1" target="_blank" rel="noopener noreferrer">
+            <i class="bx bx-play-circle" aria-hidden="true"></i> Ver curso
+          </a>
 
-    <article class="curso-card" role="article" aria-labelledby="title-data-science">
-      <div>
-        <div class="curso-header">
-          <i class="bx bx-bar-chart" aria-hidden="true"></i>
-          <h3 id="title-data-science">Data Science Básico
-            <span class="badge" aria-hidden="true">🔥 Em alta</span>
-          </h3>
+          <!-- Link para cadastro local: atenção ao caminho relativo -->
+          <a class="btn-acessar" href="cadastro.html" title="Inscrever-se">
+            <i class="bx bx-check-square" aria-hidden="true"></i> Inscrever-se
+          </a>
         </div>
-        <div class="curso-info" aria-hidden="false">
-          <span title="Nível"><i class="bx bx-signal-5"></i> Intermediário</span>
-          <span title="Duração"><i class="bx bx-time-five"></i> 8h</span>
-          <span title="Professor"><i class="bx bx-user-circle"></i> Prof. Thiago Rocha</span>
-        </div>
-        <p>Análise de dados, pandas e visualização para decisões orientadas por dados.</p>
-      </div>
-      <div class="curso-actions">
-        <a class="btn-acessar" href="https://www.youtube.com/results?search_query=data+science+pandas+tutorial+pt-br"
-          target="_blank" rel="noopener noreferrer">
-          <i class="bx bx-play-circle"></i> Ver curso
-        </a>
-        <a class="btn-acessar" href="/Projeto-Final/public/curso.php?id=data-science&action=enroll"
-          title="Inscrever-se">
-          <i class="bx bx-check-square"></i> Inscrever-se
-        </a>
-      </div>
-    </article>
+      </article>
 
-    <article class="curso-card" role="article" aria-labelledby="title-ml">
-      <div>
-        <div class="curso-header">
-          <i class="bx bx-brain" aria-hidden="true"></i>
-          <h3 id="title-ml">Machine Learning Prático
-            <span class="badge" aria-hidden="true">🔥 Em alta</span>
-          </h3>
+      <!-- Curso: Django REST -->
+      <article class="curso-card" role="article" aria-labelledby="title-javascript">
+        <div>
+          <div class="curso-header">
+            <i class="bx bx-code" aria-hidden="true"></i>
+            <h3 id="title-javascript">Django REST
+              <span class="badge" aria-hidden="true">🔥 Em alta</span>
+            </h3>
+          </div>
+          <div class="curso-info">
+            <span title="Nível"><i class="bx bx-signal-5" aria-hidden="true"></i> Intermediário</span>
+            <span title="Duração"><i class="bx bx-time-five" aria-hidden="true"></i> 40h</span>
+            <span title="Professor"><i class="bx bx-user-circle" aria-hidden="true"></i> Prof. Jefferson Lobato</span>
+          </div>
+          <p>Django é um framework de alto nível escrito em Python que permite construir sites seguros, robustos e escaláveis de forma rápida e eficiente.</p>
         </div>
-        <div class="curso-info" aria-hidden="false">
-          <span title="Nível"><i class="bx bx-signal-5"></i> Avançado</span>
-          <span title="Duração"><i class="bx bx-time-five"></i> 12h</span>
-          <span title="Professor"><i class="bx bx-user-circle"></i> Prof. Camila Nogueira</span>
+        <div class="curso-actions">
+          <a class="btn-acessar" href="https://www.youtube.com/watch?v=ZNFVFTqaL60&list=PLLVddSbilcumgeyk0z6ko5U_FYPfbRO2C&index=1" target="_blank" rel="noopener noreferrer">
+            <i class="bx bx-play-circle" aria-hidden="true"></i> Ver curso
+          </a>
+          <a class="btn-acessar" href="cadastro.html" title="Inscrever-se">
+            <i class="bx bx-check-square" aria-hidden="true"></i> Inscrever-se
+          </a>
         </div>
-        <p>Modelos clássicos, validação e deploy simples de modelos.</p>
-      </div>
-      <div class="curso-actions">
-        <a class="btn-acessar" href="https://www.youtube.com/results?search_query=machine+learning+tutorial+pt-br"
-          target="_blank" rel="noopener noreferrer">
-          <i class="bx bx-play-circle"></i> Ver curso
-        </a>
-        <a class="btn-acessar" href="/Projeto-Final/public/curso.php?id=ml&action=enroll" title="Inscrever-se">
-          <i class="bx bx-check-square"></i> Inscrever-se
-        </a>
-      </div>
-    </article>
+      </article>
 
-  </div>
+      <!-- Curso: Introdução ao Python -->
+      <article class="curso-card" role="article" aria-labelledby="title-python-basico">
+        <div>
+          <div class="curso-header">
+            <i class="bx bx-bolt" aria-hidden="true"></i>
+            <h3 id="title-python-basico">Introdução ao Python</h3>
+          </div>
+          <div class="curso-info">
+            <span title="Nível"><i class="bx bx-signal-5" aria-hidden="true"></i> Iniciante</span>
+            <span title="Duração"><i class="bx bx-time-five" aria-hidden="true"></i> 5h</span>
+            <span title="Professor"><i class="bx bx-user-circle" aria-hidden="true"></i> Prof. Lucas Andrade</span>
+          </div>
+          <p>Sintaxe, estrutura de dados, e pequenos projetos para fixar os conceitos.</p>
+        </div>
+        <div class="curso-actions">
+          <a class="btn-acessar" href="https://www.youtube.com/watch?v=S9uPNppGsGo" target="_blank" rel="noopener noreferrer">
+            <i class="bx bx-play-circle" aria-hidden="true"></i> Ver curso
+          </a>
+          <a class="btn-acessar" href="cadastro.html" title="Inscrever-se">
+            <i class="bx bx-check-square" aria-hidden="true"></i> Inscrever-se
+          </a>
+        </div>
+      </article>
 
-  <section class="lancamentos" aria-labelledby="lanc-title">
-    <h2 id="lanc-title"><i class='bx bx-bulb'></i> Próximos Lançamentos</h2>
-    <div class="row">
-      <div class="lanc-item"><strong>Arquitetura de Microsserviços</strong> — desenho, comunicação e patterns (em
-        breve).</div>
-      <div class="lanc-item"><strong>Segurança Web</strong> — OWASP, autenticação e proteção de APIs.</div>
-      <div class="lanc-item"><strong>GraphQL</strong> — APIs modernas e performance.</div>
-      <div class="lanc-item"><strong>WebAssembly</strong> — perfis e uso em aplicações críticas.</div>
+      <!-- Curso: Pandas -->
+      <article class="curso-card" role="article" aria-labelledby="title-html-css">
+        <div>
+          <div class="curso-header">
+            <i class="bx bx-layout" aria-hidden="true"></i>
+            <h3 id="title-html-css">Pandas PY 🐍</h3>
+          </div>
+          <div class="curso-info">
+            <span title="Nível"><i class="bx bx-signal-5" aria-hidden="true"></i> Intermediário</span>
+            <span title="Duração"><i class="bx bx-time-five" aria-hidden="true"></i> 8h 20min</span>
+            <span title="Professor"><i class="bx bx-user-circle" aria-hidden="true"></i> Prof. Samuel Martins</span>
+          </div>
+          <p>É o "Excel do Python". Permite manipular tabelas, limpar dados e filtrar informações.</p>
+        </div>
+        <div class="curso-actions">
+          <a class="btn-acessar" href="https://www.youtube.com/watch?v=Ejkb_YpuHWs" target="_blank" rel="noopener noreferrer">
+            <i class="bx bx-play-circle" aria-hidden="true"></i> Ver curso
+          </a>
+          <!-- Link para um PHP interno (possivelmente dinâmico). Verifique se a query string é esperada pelo backend. -->
+          <a class="btn-acessar" href="/Projeto-Final/public/curso.php?id=html-css&action=enroll" title="Inscrever-se">
+            <i class="bx bx-check-square" aria-hidden="true"></i> Inscrever-se
+          </a>
+        </div>
+      </article>
+
+      <!-- Curso: Banco de Dados com MySQL -->
+      <article class="curso-card" role="article" aria-labelledby="title-sql-mysql">
+        <div>
+          <div class="curso-header">
+            <i class="bx bx-database" aria-hidden="true"></i>
+            <h3 id="title-sql-mysql">Banco de Dados com MySQL</h3>
+          </div>
+          <div class="curso-info">
+            <span title="Nível"><i class="bx bx-signal-5" aria-hidden="true"></i> Intermediário</span>
+            <span title="Duração"><i class="bx bx-time-five" aria-hidden="true"></i> 5h 40min</span>
+            <span title="Professor"><i class="bx bx-user-circle" aria-hidden="true"></i> Prof. Sofia Ramos</span>
+          </div>
+          <p>Modelagem, normalização, queries avançadas e integração com PHP.</p>
+        </div>
+        <div class="curso-actions">
+          <a class="btn-acessar" href="https://www.youtube.com/results?search_query=mysql+tutorial+pt-br" target="_blank" rel="noopener noreferrer">
+            <i class="bx bx-play-circle" aria-hidden="true"></i> Ver curso
+          </a>
+          <a class="btn-acessar" href="/Projeto-Final/public/curso.php?id=sql-mysql&action=enroll" title="Inscrever-se">
+            <i class="bx bx-check-square" aria-hidden="true"></i> Inscrever-se
+          </a>
+        </div>
+      </article>
+
+      <!-- Curso: Git & GitHub -->
+      <article class="curso-card" role="article" aria-labelledby="title-git-github">
+        <div>
+          <div class="curso-header">
+            <i class="bx bx-git-branch" aria-hidden="true"></i>
+            <h3 id="title-git-github">Git & GitHub — Fluxos de Trabalho</h3>
+          </div>
+          <div class="curso-info">
+            <span title="Nível"><i class="bx bx-signal-5" aria-hidden="true"></i> Todos os níveis</span>
+            <span title="Duração"><i class="bx bx-time-five" aria-hidden="true"></i> 3h 20min</span>
+            <span title="Professor"><i class="bx bx-user-circle" aria-hidden="true"></i> Prof. Daniel Freitas</span>
+          </div>
+          <p>Controle de versão, branches, pull requests e boas práticas colaborativas.</p>
+        </div>
+        <div class="curso-actions">
+          <a class="btn-acessar" href="https://www.youtube.com/results?search_query=git+github+tutorial+pt-br" target="_blank" rel="noopener noreferrer">
+            <i class="bx bx-play-circle" aria-hidden="true"></i> Ver curso
+          </a>
+          <a class="btn-acessar" href="/Projeto-Final/public/curso.php?id=git-github&action=enroll" title="Inscrever-se">
+            <i class="bx bx-check-square" aria-hidden="true"></i> Inscrever-se
+          </a>
+        </div>
+      </article>
+
+      <!-- Curso: Data Science Básico -->
+      <article class="curso-card" role="article" aria-labelledby="title-data-science">
+        <div>
+          <div class="curso-header">
+            <i class="bx bx-bar-chart" aria-hidden="true"></i>
+            <h3 id="title-data-science">Data Science Básico
+              <span class="badge" aria-hidden="true">🔥 Em alta</span>
+            </h3>
+          </div>
+          <div class="curso-info">
+            <span title="Nível"><i class="bx bx-signal-5" aria-hidden="true"></i> Intermediário</span>
+            <span title="Duração"><i class="bx bx-time-five" aria-hidden="true"></i> 8h</span>
+            <span title="Professor"><i class="bx bx-user-circle" aria-hidden="true"></i> Prof. Thiago Rocha</span>
+          </div>
+          <p>Análise de dados, pandas e visualização para decisões orientadas por dados.</p>
+        </div>
+        <div class="curso-actions">
+          <a class="btn-acessar" href="https://www.youtube.com/results?search_query=data+science+pandas+tutorial+pt-br" target="_blank" rel="noopener noreferrer">
+            <i class="bx bx-play-circle" aria-hidden="true"></i> Ver curso
+          </a>
+          <a class="btn-acessar" href="/Projeto-Final/public/curso.php?id=data-science&action=enroll" title="Inscrever-se">
+            <i class="bx bx-check-square" aria-hidden="true"></i> Inscrever-se
+          </a>
+        </div>
+      </article>
+
+      <!-- Curso: Machine Learning Prático -->
+      <article class="curso-card" role="article" aria-labelledby="title-ml">
+        <div>
+          <div class="curso-header">
+            <i class="bx bx-brain" aria-hidden="true"></i>
+            <h3 id="title-ml">Machine Learning Prático
+              <span class="badge" aria-hidden="true">🔥 Em alta</span>
+            </h3>
+          </div>
+          <div class="curso-info">
+            <span title="Nível"><i class="bx bx-signal-5" aria-hidden="true"></i> Avançado</span>
+            <span title="Duração"><i class="bx bx-time-five" aria-hidden="true"></i> 12h</span>
+            <span title="Professor"><i class="bx bx-user-circle" aria-hidden="true"></i> Prof. Camila Nogueira</span>
+          </div>
+          <p>Modelos clássicos, validação e deploy simples de modelos.</p>
+        </div>
+        <div class="curso-actions">
+          <a class="btn-acessar" href="https://www.youtube.com/results?search_query=machine+learning+tutorial+pt-br" target="_blank" rel="noopener noreferrer">
+            <i class="bx bx-play-circle" aria-hidden="true"></i> Ver curso
+          </a>
+          <a class="btn-acessar" href="/Projeto-Final/public/curso.php?id=ml&action=enroll" title="Inscrever-se">
+            <i class="bx bx-check-square" aria-hidden="true"></i> Inscrever-se
+          </a>
+        </div>
+      </article>
+
+    </div> <!-- fim .cursos-container -->
+
+    <!-- Seção de próximos lançamentos -->
+    <section class="lancamentos" aria-labelledby="lanc-title">
+      <h2 id="lanc-title"><i class='bx bx-bulb' aria-hidden="true"></i> Próximos Lançamentos</h2>
+      <div class="row">
+        <div class="lanc-item"><strong>Arquitetura de Microsserviços</strong> — desenho, comunicação e patterns (em breve).</div>
+        <div class="lanc-item"><strong>Segurança Web</strong> — OWASP, autenticação e proteção de APIs.</div>
+        <div class="lanc-item"><strong>GraphQL</strong> — APIs modernas e performance.</div>
+        <div class="lanc-item"><strong>WebAssembly</strong> — perfis e uso em aplicações críticas.</div>
+      </div>
+    </section>
+
+    <!-- Link de voltar para o menu principal. Conferir caminho relativo -->
+    <div class="voltar">
+      <a href="../HTML/menu.html"><i class='bx bx-arrow-back' aria-hidden="true"></i> Voltar ao início</a>
     </div>
-  </section>
 
-  <div class="voltar">
-    <a href="../HTML/menu.html"><i class='bx bx-arrow-back'></i> Voltar ao inicio</a>
-  </div>
+  </main>
 
-  <footer class="main-footer">
+  <!-- Rodapé com informações de copyright e redes sociais -->
+  <footer class="main-footer" role="contentinfo">
     <div class="footer-content">
       <div class="footer-logo">
-        <i class='bx bx-code-alt'></i> Hexdatas
+        <i class='bx bx-code-alt' aria-hidden="true"></i> Hexdatas
       </div>
-      <p>© 2025 Portal de Cursos. Desenvolvido com <i class='bx bxs-heart' style="color: var(--neon-green)"></i> e PHP
-        MVC.</p>
-      <div class="social-links">
-        <a href="https://github.com/Vinias1/Projeto-Final"><i class='bx bxl-github'></i></a>
-        <a href="#"><i class='bx bxl-linkedin'></i></a>
-        <a href="#"><i class='bx bxl-instagram'></i></a>
+      <p>© 2025 Portal de Cursos. Desenvolvido com <i class='bx bxs-heart' aria-hidden="true" style="color: var(--neon-green)"></i> e PHP MVC.</p>
+      <div class="social-links" aria-label="Redes sociais">
+        <a href="https://github.com/Vinias1/Projeto-Final" aria-label="GitHub do projeto"><i class='bx bxl-github' aria-hidden="true"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin' aria-hidden="true"></i></a>
+        <a href="#" aria-label="Instagram"><i class='bx bxl-instagram' aria-hidden="true"></i></a>
       </div>
     </div>
   </footer>
+
+  <!-- Observação: se adicionar scripts, prefira carregá-los no fim do body para performance -->
 </body>
 
 </html>

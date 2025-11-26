@@ -1,144 +1,163 @@
-    :root {
-      --neon-green: #00ff88;
-      --neon-cyan: #00e0ff;
-      --bg-dark: #0d1117;
-      --bg-gradient: radial-gradient(circle at top, #0f2027, #08141c 80%);
-      --text-light: #ccffe6;
-    }
 
-    * {
-      box-sizing: border-box;
-    }
+:root {
+  /* Variáveis de cores reutilizáveis */
+  --neon-green: #00ff88;
+  --neon-cyan: #00e0ff;
+  --bg-dark: #0d1117;
+  --bg-gradient: radial-gradient(circle at top, #0f2027, #08141c 80%);
+  --text-light: #ccffe6;
+}
 
-    body {
-      background: var(--bg-gradient);
-      color: var(--text-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      min-height: 100vh;
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      overflow-x: hidden;
-      position: relative;
-      padding: 40px 20px;
-    }
+/* box-sizing global — torna padding/border parte do tamanho total do elemento */
+* {
+  box-sizing: border-box;
+}
 
-    /* brilho suave no fundo */
-    body::before {
-      content: '';
-      position: fixed;
-      top: -100px;
-      left: -100px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(0, 255, 136, 0.2), transparent 70%);
-      filter: blur(120px);
-      z-index: 0;
-    }
+/* Corpo da página
+   - Flex column centraliza o formulário verticalmente quando a altura permitir
+   - padding dá espaçamento interno e evita que o conteúdo encoste nas bordas
+*/
+body {
+  background: var(--bg-gradient);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif; /* certifique-se de importar a fonte no HTML */
+  overflow-x: hidden;
+  position: relative;
+  padding: 40px 20px;
+}
 
-    h1 {
-      color: var(--neon-green);
-      text-shadow: 0 0 15px var(--neon-green);
-      margin-bottom: 10px;
-      font-size: 2rem;
-      text-align: center;
-      z-index: 1;
-    }
+/* Pseudo-elemento para brilho suave no fundo */
+body::before {
+  content: '';
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.2), transparent 70%);
+  filter: blur(120px);
+  z-index: 0; /* fica atrás do conteúdo */
+}
 
-    p {
-      color: #b7ffe0;
-      margin-bottom: 25px;
-      font-size: 1rem;
-      text-align: center;
-      z-index: 1;
-    }
+/* Título principal */
+h1 {
+  color: var(--neon-green);
+  text-shadow: 0 0 15px var(--neon-green);
+  margin-bottom: 10px;
+  font-size: 2rem;
+  text-align: center;
+  z-index: 1; /* fica acima do brilho */
+}
 
-    .form-container {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(0, 255, 136, 0.4);
-      border-radius: 16px;
-      padding: 40px 35px;
-      width: 100%;
-      max-width: 400px;
-      box-shadow: 0 0 25px rgba(0, 255, 136, 0.15);
-      backdrop-filter: blur(10px);
-      z-index: 1;
-    }
+/* Parágrafo descritivo (genérico) */
+p {
+  color: #b7ffe0; /* cor próxima ao --text-light, aceita consolidar */
+  margin-bottom: 25px;
+  font-size: 1rem;
+  text-align: center;
+  z-index: 1;
+}
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+/* Container do formulário: card com vidro fosco e borda neon */
+.form-container {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 136, 0.4);
+  border-radius: 16px;
+  padding: 40px 35px;
+  width: 100%;
+  max-width: 400px; /* Limita a largura para melhor leitura em desktop */
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.15);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
 
-    label {
-      display: block;
-      text-align: left;
-      font-size: 0.9rem;
-      color: var(--neon-green);
-      margin-bottom: 6px;
-    }
+/* Formulário em coluna com espaçamento entre campos */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-    input {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid rgba(0, 255, 136, 0.5);
-      border-radius: 8px;
-      background: rgba(0, 0, 0, 0.4);
-      color: var(--text-light);
-      font-size: 1rem;
-      outline: none;
-      transition: all 0.3s ease;
-    }
+/* Labels: alinhadas à esquerda, cor neon para destaque */
+label {
+  display: block;
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--neon-green);
+  margin-bottom: 6px;
+}
 
-    input:focus {
-      box-shadow: 0 0 15px var(--neon-green);
-      border-color: var(--neon-green);
-      background: rgba(0, 0, 0, 0.6);
-    }
+/* Inputs básicos */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(0, 255, 136, 0.5);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--text-light);
+  font-size: 1rem;
+  outline: none; /* substituído por foco visual no :focus */
+  transition: all 0.3s ease;
+}
 
-    .btn-cadastrar {
-      background: transparent;
-      color: var(--neon-green);
-      border: 1px solid var(--neon-green);
-      border-radius: 8px;
-      padding: 12px;
-      font-size: 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
-    }
+/* Foco acessível — importante para navegação por teclado */
+input:focus {
+  box-shadow: 0 0 15px var(--neon-green);
+  border-color: var(--neon-green);
+  background: rgba(0, 0, 0, 0.6);
+}
 
-    .btn-cadastrar:hover {
-      background: var(--neon-green);
-      color: #000;
-      box-shadow: 0 0 25px var(--neon-green);
-      transform: translateY(-2px);
-    }
+/* Botão de envio / cadastrar */
+.btn-cadastrar {
+  background: transparent;
+  color: var(--neon-green);
+  border: 1px solid var(--neon-green);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
 
-    .link-login {
-      margin-top: 25px;
-      color: #b7ffe0;
-      font-size: 0.9rem;
-      text-align: center;
-    }
+/* Hover do botão — efeito de preenchimento */
+.btn-cadastrar:hover {
+  background: var(--neon-green);
+  color: #000;
+  box-shadow: 0 0 25px var(--neon-green);
+  transform: translateY(-2px);
+}
 
-    .link-login a {
-      color: var(--neon-green);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
+/* Link para página de login abaixo do formulário */
+.link-login {
+  margin-top: 25px;
+  color: #b7ffe0;
+  font-size: 0.9rem;
+  text-align: center;
+}
 
-    .link-login a:hover {
-      color: var(--neon-cyan);
-      text-shadow: 0 0 10px var(--neon-green);
-    }
+.link-login a {
+  color: var(--neon-green);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
 
-    @media (max-width: 600px) {
-      h1 { font-size: 1.6rem; }
-      .form-container { padding: 30px 25px; }
-    }
+.link-login a:hover {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+/* Responsividade: ajuste de espaçamento e tamanho de fonte em telas menores */
+@media (max-width: 600px) {
+  h1 { font-size: 1.6rem; }
+  .form-container { padding: 30px 25px; }
+}
+

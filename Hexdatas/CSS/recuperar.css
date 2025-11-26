@@ -1,0 +1,178 @@
+:root{
+  --neon-green: #00ff88;
+  --neon-cyan: #00e0ff;
+  --text-light: #d6fff1;
+  --bg-start: #0f2027;
+  --bg-end: #08141c;
+  --card-bg: rgba(255,255,255,0.03);
+  --err: #ff6b6b;
+  --max-width: 420px;
+  --radius: 12px;
+  --transition: 180ms;
+  font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Reset */
+*{ box-sizing: border-box }
+
+body{
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, var(--bg-start), var(--bg-end) 80%);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before{
+  content: '';
+  position: fixed;
+  top: -120px;
+  left: -140px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.10), transparent 70%);
+  filter: blur(90px);
+  z-index: 0;
+}
+
+.login-container{
+  width: 100%;
+  max-width: var(--max-width);
+  z-index: 1;
+}
+
+.login-card{
+  background: var(--card-bg);
+  border: 1px solid rgba(0,255,136,0.08);
+  padding: 30px;
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.login-card h1{
+  margin: 0 0 6px;
+  color: var(--neon-green);
+  font-size: 1.4rem;
+  text-shadow: 0 0 10px rgba(0,255,136,0.10);
+}
+
+.login-card p{
+  margin: 0 0 18px;
+  color: rgba(214,255,241,0.85);
+  font-size: 0.95rem;
+}
+
+/* Mensagens e inputs reaproveitam classes do login.css */
+/* (copie as classes alerta-sucesso, alerta-erro, input-group, field-error, btn-login, loader, etc.)
+   Para evitar duplicação você pode manter apenas um arquivo CSS shared (ex.: auth.css) e
+   apontar ambos os HTMLs para ele. */
+
+.alerta-sucesso{
+  background: linear-gradient(90deg, rgba(0,255,136,0.06), rgba(0,224,255,0.04));
+  border: 1px solid rgba(0,255,136,0.12);
+  color: var(--neon-green);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.alerta-erro{
+  background: rgba(255,107,107,0.06);
+  border: 1px solid rgba(255,107,107,0.18);
+  color: var(--err);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Reaproveitar input-group, field-error, btn-login, loader e link-register do login.css */
+/* Para simplicidade do exemplo, cole o conteúdo das classes abaixo (ou crie auth.css único). */
+
+.input-group{
+  text-align: left;
+  margin-bottom: 12px;
+}
+.input-group label{
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: rgba(214,255,241,0.85);
+}
+.input-group input{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: var(--text-light);
+  outline: none;
+  transition: all var(--transition) ease;
+  font-size: 0.95rem;
+}
+.input-group input:focus{
+  box-shadow: 0 0 18px rgba(0,224,255,0.06);
+  border-color: rgba(0,224,255,0.18);
+  transform: translateY(-1px);
+}
+.field-error{
+  margin-top: 6px;
+  font-size: 0.82rem;
+  color: var(--err);
+  min-height: 1em;
+}
+
+.btn-login{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--neon-cyan);
+  background: linear-gradient(90deg, rgba(0,224,255,0.06), rgba(0,255,136,0.03));
+  color: var(--neon-cyan);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,224,255,0.06);
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  margin-top: 8px;
+  position: relative;
+}
+.btn-login:hover:not(:disabled),
+.btn-login:focus:not(:disabled){
+  background: var(--neon-cyan);
+  color: #001820;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,224,255,0.12);
+}
+.loader{
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.08);
+  border-top: 2px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.link-register{
+  margin-top: 18px;
+  color: rgba(214,255,241,0.85);
+  font-size: 0.95rem;
+}
+.link-register a{
+  color: var(--neon-green);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width:420px){
+  .login-card{ padding: 18px; border-radius: 10px; }
+}

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,47 +7,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hexdatas</title>
+  <!-- Ícones Boxicons (CDN) -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <!-- CSS da página (caminho relativo) -->
   <link rel="stylesheet" type="text/css" href="../CSS/devWeb.css">
 </head>
 
 <body>
+  <!-- Cabeçalho principal: logo e navegação -->
   <header class="main-header">
 
+    <!-- Logo: ícone + nome do portal -->
     <div class="logo-container">
       <i class='bx bx-code-alt'></i> Hexdatas
     </div>
 
+    <!-- Navegação principal -->
     <nav class="main-nav">
-  <a href="inicio.html" class="nav-link active"><i class='bx bx-home'></i> Início</a>
-  
-  <div class="dropdown-container">
-    <a href="cursos.html" class="nav-link">
-      <i class='bx bx-book'></i> Cursos <i class='bx bx-chevron-down arrow-icon'></i>
-    </a>
-    <div class="dropdown-menu">
-      <a href="#"><i class='bx bxl-python'></i> Python</a>
-      <a href="#"><i class='bx bxl-java'></i> Java</a>
-      <a href="#"><i class='bx bxl-react'></i> React</a>
-      <a href="#"><i class='bx bxs-data'></i> Análise de Dados</a>
-      <a href="#"><i class='bx bxl-php'></i> PHP Moderno</a>
-    </div>
-  </div>
-  <a href="/Projeto-Final/public/suporte" class="nav-link"><i class='bx bx-support'></i> Suporte</a>
-  <a href="sobreNos.html" class="nav-link"><i class='bx bx-home'></i> Sobre nós</a>
-  <a href="login.html" class="btn-login">Entrar</a>
-</nav>
+      <!-- Link para página inicial; classe "active" indica o item selecionado -->
+      <a href="inicio.html" class="nav-link active"><i class='bx bx-home'></i> Início</a>
+
+      <!-- Dropdown de cursos: estrutura com contêiner, botão/trigger e menu suspenso -->
+      <div class="dropdown-container">
+        <a href="cursos.html" class="nav-link">
+          <i class='bx bx-book'></i> Cursos <i class='bx bx-chevron-down arrow-icon'></i>
+        </a>
+
+        <!-- Itens do dropdown (visibilidade controlada por CSS/JS) -->
+        <div class="dropdown-menu">
+          <a href="#"><i class='bx bxl-python'></i> Python</a>
+          <a href="#"><i class='bx bxl-java'></i> Java</a>
+          <a href="#"><i class='bx bxl-react'></i> React</a>
+          <a href="#"><i class='bx bxs-data'></i> Análise de Dados</a>
+          <a href="#"><i class='bx bxl-php'></i> PHP Moderno</a>
+        </div>
+      </div>
+
+      <!-- Link para suporte (possivelmente rota absoluta no servidor) -->
+      <a href="/Projeto-Final/public/suporte" class="nav-link"><i class='bx bx-support'></i> Suporte</a>
+
+      <!-- Sobre nós -->
+      <a href="sobreNos.html" class="nav-link"><i class='bx bx-home'></i> Sobre nós</a>
+
+      <!-- Botão de login -->
+      <a href="login.html" class="btn-login">Entrar</a>
+    </nav>
   </header>
+
+  <!-- Wrapper do conteúdo (pode ser usado para centrar/definir largura pelo CSS) -->
   <main class="content-wrapper"></main>
+
+  <!-- Título principal da página com ícone -->
   <h1><i class='bx bx-code-alt'></i> Desenvolvimento Web </h1>
 
+  <!-- Texto introdutório: descreve a proposta da seção -->
   <p class="intro">
     Domine o processo de transformar dados brutos em insights estratégicos. Aprenda técnicas de coleta, limpeza,
     visualização e interpretação para dar suporte à tomada de decisão em qualquer área de negócio.
   </p>
 
+  <!-- Contêiner com cards de cursos -->
   <div class="cursos-container">
 
+    <!-- Card de curso: PHP Moderno com MVC -->
     <article class="curso-card" role="article" aria-labelledby="title-php-mvc">
       <div>
         <div class="curso-header">
@@ -54,13 +78,18 @@
             <span class="badge" aria-hidden="true">🔥 Em alta</span>
           </h3>
         </div>
+
+        <!-- Informações rápidas (nível, duração, professor) -->
         <div class="curso-info" aria-hidden="false">
           <span title="Nível"><i class="bx bx-signal-5"></i> Iniciante </span>
           <span title="Duração"><i class="bx bx-time-five"></i> 100h</span>
           <span title="Professor"><i class="bx bx-user-circle"></i> Prof. Gustavo Guanabara</span>
         </div>
+
         <p>Crie aplicações PHP organizadas com MVC, roteamento e boas práticas de arquitetura.</p>
       </div>
+
+      <!-- Ações do card: ver curso (link externo) e inscrever-se (link local) -->
       <div class="curso-actions">
         <a class="btn-acessar" href="https://www.youtube.com/watch?v=TfsO0BGvGn0" target="_blank"
           rel="noopener noreferrer">
@@ -72,6 +101,7 @@
       </div>
     </article>
 
+    <!-- Card de curso: Html & CSS -->
     <article class="curso-card" role="article" aria-labelledby="title-javascript">
       <div>
         <div class="curso-header">
@@ -85,6 +115,8 @@
           <span title="Duração"><i class="bx bx-time-five"></i> 100h</span>
           <span title="Professor"><i class="bx bx-user-circle"></i> Prof. Gustavo Guanabara</span>
         </div>
+
+        <!-- Observação: descrição do curso — mantenha atualizada com o que o curso oferece -->
         <p>Django é um framework de alto nível escrito em Python que permite construir sites seguros, robustos e
           escaláveis de forma rápida e eficiente.</p>
       </div>
@@ -100,6 +132,7 @@
       </div>
     </article>
 
+    <!-- Card de curso: JavaScript do Zero ao Avançado -->
     <article class="curso-card" role="article" aria-labelledby="title-javascript">
       <div>
         <div class="curso-header">
@@ -126,7 +159,7 @@
       </div>
     </article>
 
-
+    <!-- Card de curso: React -->
     <article class="curso-card" role="article" aria-labelledby="title-react">
       <div>
         <div class="curso-header">
@@ -153,6 +186,7 @@
       </div>
     </article>
 
+    <!-- Card de curso: TypeScript -->
     <article class="curso-card" role="article" aria-labelledby="title-typescript">
       <div>
         <div class="curso-header">
@@ -179,6 +213,7 @@
 
   </div>
 
+  <!-- Seção de lançamentos futuros -->
   <section class="lancamentos" aria-labelledby="lanc-title">
     <h2 id="lanc-title"><i class='bx bx-bulb'></i> Próximos Lançamentos</h2>
     <div class="row">
@@ -190,10 +225,12 @@
     </div>
   </section>
 
+  <!-- Link para voltar ao menu principal -->
   <div class="voltar">
     <a href="../HTML/menu.html"><i class='bx bx-arrow-back'></i> Voltar ao inicio</a>
   </div>
 
+  <!-- Rodapé com copyright e redes sociais -->
   <footer class="main-footer">
     <div class="footer-content">
       <div class="footer-logo">
