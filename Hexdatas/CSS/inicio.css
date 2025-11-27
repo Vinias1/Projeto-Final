@@ -559,11 +559,9 @@
 }
 
 .area-card:hover {
-    border-color: var(--neon-green);
+      border-color: var(--neon-green);
       box-shadow: 0 0 30px var(--neon-green);
       transform: translateY(-6px);
-      background: rgba(0,255,136,0.06);
-
 }
 
 /* Estilo do Icone Wrapper (Círculo de Fundo) */
@@ -600,7 +598,7 @@
     font-size: 0.85rem;
     font-weight: 500;
     /* Certifique-se que o texto do link seja escuro no fundo branco: */
-    color: var(--text-color, #333); 
+    color: var(--text-color, #0af119); 
     text-align: center;
     line-height: 1.3;
 }
